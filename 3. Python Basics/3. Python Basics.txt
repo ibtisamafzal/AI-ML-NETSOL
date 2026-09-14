@@ -1,0 +1,43 @@
+1. Python vs Jupyter Notebook vs Anaconda
+Python is a programming language, Jupyter Notebook is designed for interactive computing that work with cells.
+Anaconda is a distribution that includes Python, Conda, Jupyter and many commonly used packages.
+
+1.1 Testing vs Debugging
+
+
+
+2. Basic commands and examples
+
+2.1 Data Types
+int, float, complex, bool, str
+
+Variable is dynamically typed, you don't need to declare data type.
+
+                                      P  y  t  h  o  n
+Python also allows negative indexes: -6 -5 -4 -3 -2 -1    print(word[-1]): n
+
+strip(): Remove surrounding whitespaces
+
+split(): Convert the string words into array
+
+len(): Check length of the string
+
+f-string: print multitype variable 
+
+Type Casting
+
+Indentation is a part of Python language.
+
+Modules: A python file containing reusable code
+
+Exception Handling & File Handling
+
+Python has a special value None.
+
+
+
+
+
+
+3. Python Environment and Conda Environment
+

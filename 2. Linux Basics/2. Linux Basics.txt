@@ -1,0 +1,55 @@
+Operating System:
+Responsible communication & different computational tasks on the hardware.
+GUI and CLI based.
+
+
+Distro/ Wrapper/ Skin:
+Debian is the Linux distribution.
+
+
+Comparison of different OS:
+
+
+Basic Linux Commands:
+pwd -> Print working directory
+cd -> change directory
+ls -> list folder files (-l, -a, -la, -lah)
+
+cat [filename]-> Read a file
+less [filename] -> Read large files.
+
+head [filename] -> Print first 10 lines.
+tail [filename] -> Print last 10 lines. (tail -f to show continuous display)
+
+mkdir [foldername] -> Create new directory
+mkdir -p foldername/data/raw -> create new subfolder.
+touch [filename] -> create a file
+
+nano [filename] -> Opens a terminal for quick actions
+
+cp -> Copy (cp file.txt backup.txt)
+mv -> Move or rename (mv old.txt new.txt)
+
+rm -r [foldername]
+
+sudo -> to give elevated privileges. (sudo apt update)
+
+
+Three major groups:
+Owner -> rwx
+Group -> r-x
+others -> r--
+
+
+
+chmod -> change mode/permission
+
+Redirection - Important concept in Linux
+
+echo "New" > hello.txt   -> Add content to a file.
+
+
+Install any software on Debian:
+sudo dpkg -i package.deb
+install a local .deb.
+

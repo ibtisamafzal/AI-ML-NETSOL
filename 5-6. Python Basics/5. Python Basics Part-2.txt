@@ -1,0 +1,28 @@
+Control Flow
+
+if
+for
+while
+break
+continue
+pass
+return (multiple arguments can be returned)
+
+
+Ternary Expression:
+result = "Adult" if age >=18 else "Minor"
+
+
+LAMBDA Function: (Preferred for 
+To write functions in one liner: Use "LAMBDA"
+def square(x):
+	return x**2
+Lambda:
+square = lambda x:x**2
+print(square(s))
+
+
+
+LEGB rule for accessing Variables: Local -> Enclosing -> Global -> Built-in
+
+

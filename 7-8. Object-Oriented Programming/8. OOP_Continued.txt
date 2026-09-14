@@ -1,0 +1,52 @@
+Abstraction: Hiding data and showing only necessary information.
+
+Abstract Class: Serve as a base/ template for subclasses.
+
+
+
+# We must have to use the abstract method in the child class, otherwise it throws error.
+[
+
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14159 * self.radius ** 2
+        
+circle = Circle(5)
+print(circle.area())
+
+]
+
+
+
+Inheritance: is-a relationship
+
+Overriding vs Overloading
+
+super() method
+
+Multi-level Inheritance
+
+Hierarchical Inheritance
+
+Multiple Inheritance
+
+Diamond Problem
+
+
+
+Polymorphism
+Dynamic Polymorphism
+Method Overloading
+
+dunder methods
+

@@ -1,0 +1,36 @@
+1. Abstraction (Hiding Complexity)
+
+2. Encapsulation (Combining data and the methods)
+
+3. Inheritance
+
+4. Polymorphism
+
+
+Class: Blueprint/ Template
+Object: Actual instance of a class.
+
+
+Constructor:
+
+Class Variables: belongs to the class rather than an individual object.
+
+Instance Variable:
+
+Class Method: @classmethod (works within the class without creating an object).
+
+Static Methods: @staticmethod
+
+
+(cls VS self method)*
+
+
+Destructor:
+
+Access Specifiers: Public, Private (double __ before variable), Protected (single _ before variable)
+
+name mangling
+
+
+
+

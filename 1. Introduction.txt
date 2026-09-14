@@ -1,0 +1,9 @@
+Steps to add a new feature to a webpage:
+
+1. R&D - Research & Development
+2. POC - Proof of Concept
+3. MVP - Minimal Viable Product
+4. Integrate with the webpage
+5. Testing -> QA Testing (QA Engineer) | Unit Testing (Developer)
+6. Deploy -> Testing Env | Staging Env | Production Env
+7. Documentation

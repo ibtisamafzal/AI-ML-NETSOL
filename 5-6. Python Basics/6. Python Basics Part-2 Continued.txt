@@ -1,0 +1,34 @@
+1. Lambda Function Continued:
+Lambda function is not reusable as the normal function.
+
+
+2. Map: Applies a function to every element of an iterable and returns an iterator.
+
+numbers = [1,2,3,4]
+result = map(lambda x:x**2, numbers)
+print(list(result))
+
+
+3. Parameter vs Argument
+
+
+4. Inner/ Nested Functions:
+def outer():
+    
+    def inner():
+        print("Hello from inner")
+    inner()
+    
+    print("Hello from Outer")
+outer()
+
+
+
+4. File Handling
+Opening a file, Writing into a file
+
+5. JSON File
+
+6. Exception Handling
+
+
