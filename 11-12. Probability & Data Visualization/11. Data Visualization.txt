@@ -1,0 +1,16 @@
+# Data Visualization
+
+Correlation Coefficient -> Measures the strength and direction of the relationship between two variables.
+
+Positive & Negative Correlation
+
+Univariate Plots -> Analyzing one variable (Histogram/Boxplot/Barchart)
+
+Bivariate Plots -> Analyzing two variables (Scatter Plot)
+
+Multivariate Plots -> Analyzing Multiple Variables (Pair Plot/ 3D Scatter Plot)
+
+
+
+# Probability
+ 

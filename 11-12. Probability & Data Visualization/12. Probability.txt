@@ -1,0 +1,17 @@
+Joint P(A,B) -> Check chances for both occurrences.
+
+vs 
+
+Marginal P(A)
+
+vs 
+
+Conditional P(A|B) -> One event is already occurred, now check other with respect.
+
+
+
+
+Bayes' Theorem
+		-> Naive Bayes (Assumes that features don't affect each other)
+
+Correlation

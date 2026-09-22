@@ -1,0 +1,79 @@
+Lecture 9:
+
+Features
+
+Target Variable
+
+Data Classification:
+Based on Format -> [Structured (rows/columns -> Excel, CSV, SQL),
+	            Semi-Structured (),
+	            Unstructured (images, videos, audio, etc.)
+		   ]
+
+
+Quantitative Data, Qualitative Data, Numerical Data, Categorical Data,
+
+Nominal Vairables (No natural ordering): Solution -> One-hot encoding
+Ordinal Variables
+Binary Classification (True/False, Spam/Not Span/ Churn/No Churn)
+
+
+Discrete (Countable) vs Continous (Measureable)
+
+
+Measures of Central Tendency (Where is the center?) -> Mean, Median, Mode
+
+Statistics:
+
+Mean: Sum/ Total number of values ->    import numpy as np
+					salary = [30000, 40000, 50000, 60000, 70000]
+					print (np.mean(salary))
+
+Mean in ML -> Outliers are a problem for mean.
+
+Median: Middle value after sorting.
+
+Mode: Most recurring value -> Best for Categorical Data
+
+
+
+
+Lecture-10:
+
+Measures of Dispersion (How spread out is the data?) -> Variance, Standard Deviation, IQR
+
+Variance (Data Analysis) vs Anomaly (Data Cleaning)
+
+Standard Deviation -> Important for feature scaling -> Logistic/Linear Regression, SVM, KNN, PCS, K-Means
+
+Coefficient of Variation (CV): Measures the size of standard deviation relative to the mean -> Uses: Quality Control, Sensor Data
+
+Skewness -> Right Skewed, Left Skewed, Negative Skewness (Uses: Statistical Assumptions, Visualization, Outlier Detection, Transformations)
+
+Kurtosis -> Describes the tail behavior of skewness (Types: Mesokurtic (Normal), Leptokurtic (Heavier Tails), Platykurtic (Lighter Tails))
+
+Z-Score -> How many standard deviations an observation is away from the mean.
+
+Percentile -> Relative position of an obserbation compared with the rest of the data.
+
+Quartiles -> Divide ordered data in four parts.
+
+Interquartile Range (IQR) -> Difference bw two quartiles.
+
+IQR & Outlier Detection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
