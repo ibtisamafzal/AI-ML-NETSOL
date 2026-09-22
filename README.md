@@ -9,7 +9,6 @@ I'm following a **"Learning in Public"** approach — sharing weekly progress on
 - **Duration:** 3 Months (12 Weeks)
 - **Format:** 3 hours/day — 20% Theory, 80% Practical
 - **Focus Areas:** Artificial Intelligence, Machine Learning, Deep Learning, Natural Language Processing, and Microsoft Azure AI
-```
 
 *(Structure is updated week by week as the program progresses.)*
 
