@@ -1,0 +1,18 @@
+NumPy (Numerical Python)
+-> Good for Homogeneous Data [1,2,3,4]
+-> Numerical Calculations.
+-> Working with arrays and metrices.
+-> Most important object of NumPy is NumPy Array (ndarray).
+ 
+-> NumPy Array vs Python List (Same syntax but different behavior)
+-> 2-D Array (similar to a table or matrix)
+-> Creating Arrays using Built-in Methods.
+-> Creating Arrays using Random Numbers.
+-> NumPy Built-in Functions
+-> NumPy Aggregation Methods
+-> Logical selection of data (imp in ML).
+
+
+
+Pandas 
+-> Non-Homogenous Data [1, "ABC", 2]
