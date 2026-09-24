@@ -14,5 +14,24 @@ NumPy (Numerical Python)
 
 
 
-Pandas 
+
+Pandas (Library)
 -> Non-Homogenous Data [1, "ABC", 2]
+-> Two important objects are Series and DataFrame
+-> Series: one-dimensional labeled collection of values.  [Series (Labeled) vs List (Unlabeled)]
+-> DataFrame -> Two-Dimensional labeled data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
