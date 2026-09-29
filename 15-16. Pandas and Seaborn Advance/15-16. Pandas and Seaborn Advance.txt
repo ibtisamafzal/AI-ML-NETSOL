@@ -1,0 +1,22 @@
+Parquet File (Study on your own)
+
+- Discreatization
+- Binning
+
+Discretization and binning refer to the process of transforming continuous numeric variables into discrete, categorical buckets or intervals. In ML and data preprocessing, the two terms are often used interchangeably, though "discretization" is the broader mathematical concept and "binning" is the practical technique used to implement it.
+
+
+
+Data Visualization using Pandas:
+- Pandas Plotting
+- KDE Plot - Kernel Density Estimation
+
+
+
+Seaborn
+
+- Python Library
+- Built on top of matplotlib
+- It makes it easier to create attractive statistical plots and explore relationships in datasets.
+- Different types of plots
+- Heatmap
