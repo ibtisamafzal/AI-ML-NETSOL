@@ -1,0 +1,61 @@
+Machine Learning:
+- Enables computers to learn patterns from data and use those patterns to make predictions.
+
+Supervised Learning (Learns from labeled data, where the answer is already known):
+- Classification (requires labels)
+- Regression (function approximation)
+- Examples: House Price Prediction and Spam Classification.
+
+
+Unsupervised Learning (Find patterns in data without labeled answers):
+- Clustering ()
+- Examples: Customer Segmentation and Grouping similar documents.
+
+
+Reinforcement Learning ():
+- Agent learns from it's output
+
+Self-Supervised Learning:
+- Internally set rules by itself
+
+--------------------------------------------------------------------------------------------
+
+
+Lecture 18:
+
+Supervised Machine Learning
+- Regression (Predict Numerical Values) -> House Price
+- Classification (Predict Categories) -> Spam Detection
+
+Components of Supervised ML:
+- Labeled Data (input features paired with correct answers).
+- Hypothesis (A mathematical function the model used to generate predictions).
+- Cost Function (how far the model's prediction are from the correct answer).
+- Optimizer (Update model's parameters to reduce the cost function):
+  Examples: Gradient Descent, Stochastic Gradient Descent (SGD), Adam
+
+--------------------------------------------------------------------------------------------
+Gradient Descent in Linear Regression
+- Optimization Algorithm to reduce cost function.
+- Learning Rate (controls how large each parameter update is).
+
+Gradient Descent Process:
+- Initialize www and bbb, often to zero.
+- Calculate predictions using Linear Regression
+- Calculate the cost
+- Calculate the gradients for www and bbb.
+- Update both parameters using learning rate.
+- Repeat for a specified number of iterations or until a stopping condition is reached.
+--------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
