@@ -14,7 +14,6 @@ NumPy (Numerical Python)
 
 
 
-
 Pandas (Library)
 -> Non-Homogenous Data [1, "ABC", 2]
 -> Two important objects are Series and DataFrame

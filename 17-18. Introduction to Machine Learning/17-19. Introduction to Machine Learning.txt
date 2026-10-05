@@ -49,6 +49,26 @@ Gradient Descent Process:
 --------------------------------------------------------------------------------------------
 
 
+Lecture-19:
+
+Multivariate Linear Regression:
+Predicts a continuous numerical target using multiple input.
+
+Polynomial Regression: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
