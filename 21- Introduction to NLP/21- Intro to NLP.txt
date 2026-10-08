@@ -1,0 +1,45 @@
+Natural Language Processing:
+- Enables computers to work with human language
+
+NLP Pipeline:
+Raw Text -> Cleaning -> Sentence Tokenization -> Word Tokenization -> Normalization -> Stopward Removal -> Stemming/Lemmatization -> POS Tagging -> NER/Chunking -> Feature Extraction -> Machine Learning Model -> Prediction
+
+Example: "I loved the new iPhone from Apple"
+
+
+Library Used: Spacy
+
+
+# Syntax - Sentence Structure
+# Semantics (Literal Meaning)  - Word-sense disambiguation
+
+# Pragmatics - meaning based on context and intention
+# Can you open the window?
+# Literal Meaning: Are you capable of opening the window?
+# Pragmatic Meaning: Please open the window
+
+# Discourse - Understanding language across multiple sentences
+# Important concepts include in disclosure:
+# Coreference
+# Coherence
+# Context
+# Conversation Structure
+# Topic Continuity
+
+
+Deep Learning (Important for NLP):
+- RNN
+- LSTM
+- GRU
+- CNN
+
+
+Transformers:
+- BERT
+- GPT
+- TS
+
+
+Multimodal NLP
+Retrieval-Augmented Generation (RAG)
+

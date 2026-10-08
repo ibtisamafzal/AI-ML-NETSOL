@@ -49,12 +49,29 @@ Gradient Descent Process:
 --------------------------------------------------------------------------------------------
 
 
-Lecture-19:
+Lecture-19-20:
 
-Multivariate Linear Regression:
-Predicts a continuous numerical target using multiple input.
 
-Polynomial Regression: 
+Linear Regression (Continuous):
+- House Price
+
+
+Multivariate Linear Regression (Continuous):
+- Price using area+bedrooms+age
+- Predicts a continuous numerical target using multiple input.
+
+
+Polynomial Regression (Continuous):
+- Curved price relationship
+
+
+Binary Logistic Regression (Classification): 2 Classes
+- Churn Prediction
+
+
+Multiclass Logisc (Classification): 3+ Classes
+- Flower Type
+
 
 
 

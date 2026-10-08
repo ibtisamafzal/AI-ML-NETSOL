@@ -1,0 +1,29 @@
+Choosing the Right Degree:
+
+
+Underfitting (Too Low):
+- Fails to capture the true non-linear patterns in the data
+- leading to High Error
+
+
+Overfitting (Too High):
+- Makes the model overly sensitive
+- Complex Architecture on simple data
+- Causes it to memorize random noise
+- oscillate wildly between data points
+
+
+Best Practice:
+- Use cross-validation
+- use separate validation dataset to test different degrees
+- Pick the one which gives lowest validation error
+
+
+Logistic Regression:
+- Works with Categorical Data
+
+Binary Logistic Regression (Predicts on two features)
+
+
+
+
