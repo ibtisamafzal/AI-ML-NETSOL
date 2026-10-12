@@ -26,16 +26,38 @@ I'm following a **"Learning in Public"** approach — sharing weekly progress on
 - Access specifiers, encapsulation, polymorphism, operator overloading, magic methods
 - Descriptive statistics: measures of central tendency, dispersion, and position
 
-### Week 3 — Probability & NumPy *(ongoing)*
+### Week 3 — Probability & NumPy
 - Probability theory: joint, marginal, conditional probability
 - Probability distributions and Bayesian probability
 - NumPy: array creation, indexing, slicing, reshaping, broadcasting, vectorized operations
+- Introduction to Pandas: Series, DataFrames, selection, missing data
+
+### Week 4 — Pandas, Seaborn & Machine Learning Intro
+- Pandas: merging, joining, concatenation, GroupBy, binning, data output
+- Plotting with Pandas and Seaborn: distribution, categorical, and matrix plots (heatmaps)
+- Machine learning fundamentals: types of ML and the classical ML pipeline
+- Supervised learning: regression vs. classification, cost function, optimizer
+- Univariate linear regression with gradient descent (loop-based and vectorized)
+
+### Week 5 — Machine Learning I: Regression & Classification
+- Multivariate linear regression
+- Polynomial regression
+- Logistic regression: binary and multiclass classification
+- Code practice with scikit-learn
+
+### Week 6 — NLP & Machine Learning II *(ongoing)*
+- **Natural Language Processing:** text pre-processing with NLTK/spaCy, noise removal, tokenization, stemming, lemmatization, text normalization, regular expressions
+- **Linguistic analysis:** POS tagging, named entity recognition, chunking, WordNet
+- **Text features:** Bag-of-Words, feature extraction, document similarity
+- **Model evaluation:** evaluation metrics for classification and regression, handling imbalanced datasets
+- **Classical ML models:** Support Vector Machines, Decision Trees, Random Forest (bagging)
 
 ## 🧰 Tools & Technologies
 
 - **Language:** Python 3
 - **Environment:** Anaconda, VS Code, PyCharm
-- **Libraries (upcoming):** NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow, PyTorch, Keras
+- **Libraries used so far:** NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, NLTK / spaCy
+- **Libraries (upcoming):** TensorFlow, PyTorch, Keras, Gensim
 - **Version Control:** Git & GitHub
 
 ## 📈 Progress Tracking
@@ -44,10 +66,10 @@ I'm following a **"Learning in Public"** approach — sharing weekly progress on
 |------|-------|--------|
 | 1 | Linux & Python Fundamentals | ✅ Complete |
 | 2 | OOP & Descriptive Statistics | ✅ Complete |
-| 3 | Probability & NumPy | 🔄 In Progress |
-| 4 | Pandas & Seaborn | ⬜ Upcoming |
-| 5 | Machine Learning I | ⬜ Upcoming |
-| 6 | NLP & Machine Learning II | ⬜ Upcoming |
+| 3 | Probability & NumPy | ✅ Complete |
+| 4 | Pandas, Seaborn & ML Intro | ✅ Complete |
+| 5 | Machine Learning I (Regression) | ✅ Complete |
+| 6 | NLP & Machine Learning II | 🔄 In Progress |
 | 7-9 | Deep Learning | ⬜ Upcoming |
 | 10 | Capstone Project | ⬜ Upcoming |
 | 11-12 | Microsoft Azure AI | ⬜ Upcoming |
