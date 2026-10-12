@@ -1,0 +1,21 @@
+NLTK = Natural Language Toolkit
+pip install nltk
+
+
+spaCy:
+pip install spacy
+
+Tokenization: spaCy is used to separate words and punctuation into tokens.
+
+POS = Parts of speech
+
+POS Tagging: means assigning a grammatical meaning to tokens
+(Knowing a word being used as a noun or verb helps NLP system understand its role).
+
+Dependency Parsing:
+It can help answer questions that are useful for Information extraction.
+
+Stemming: 
+
+
+
