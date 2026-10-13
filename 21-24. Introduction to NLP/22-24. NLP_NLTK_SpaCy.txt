@@ -1,0 +1,99 @@
+NLTK = Natural Language Toolkit
+- Educational
+- WordNet Support
+- pip install nltk
+
+
+spaCy:
+- Production-Oriented
+- Excellent NER/ Dependency Parsing
+- pip install spacy
+
+Tokenization:
+- spaCy is used to separate words and punctuation into tokens.
+
+POS = Parts of speech
+
+POS Tagging:
+- assigns a grammatical meaning to tokens
+- Knowing a word being used as a noun or verb helps NLP system understand its role.
+
+Dependency Parsing:
+- Finding Similarity
+- It can help answer questions that are useful for Information extraction.
+
+
+---------------------------------------------------------------------------------------
+
+Lecture 24:
+
+
+Lemmatization and stemming are two popular text‑preprocessing techniques in NLP used to reduce words to their base form.
+stemming cuts words down to their root by trimming endings,
+lemmatization uses linguistic rules to return meaningful base words (lemmas).
+
+
+Stemming: Finds the base word from similar words
+
+- from nltk.stem import PorterStemmer
+- Stemming don't always give you correct output
+- Uses of stemming: Search Engines, Text Classification, Information Retrieval, Document Matching
+
+Example Output:
+play -> play
+playing -> play
+played -> play
+plays -> play
+
+
+
+Lemmatization:
+Useful where stemming doesn't work. Used to understand the meaning.
+
+
+NER - Named Entity Recognition
+- NLP technique that identifies and classifies entities—such as people, organizations, locations, dates
+- turning it into structured data.
+
+
+Corpora (Corpus):
+A corpus is a collection of text or speech data used for NLP.
+
+
+WordNet:
+- WordNet is a lexical database that groups English words into sets of synonyms called synsets, each representing a distinct concept.
+- kind of machine-readable dictionary/ thesaurus
+
+
+Removing Punctuation:
+- import string
+
+
+Stopwords:
+
+Sentence Tokenization:
+
+Text Normalization:
+
+Regular Expression: Allow us to find patterns.
+
+Chunking: 
+Chinking: Removing unwanted tokens from the chunk.
+
+
+Bag of Words (BoW):
+- BoW converts text into numerical vectors based on word frequency.
+- It ignores grammar and word order.
+- Useful for text classification, sentiment analysis, etc.
+
+
+
+
+
+
+
+
+
+
+
+
