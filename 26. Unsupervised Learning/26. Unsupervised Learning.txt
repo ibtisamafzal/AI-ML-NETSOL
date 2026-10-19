@@ -1,0 +1,8 @@
+Unsupervised Learning:
+- Model learns patterns, structures, or relationships
+- Unlabeled Data
+- Data does not contain a target column
+
+
+K-Means Clustering:
+- 

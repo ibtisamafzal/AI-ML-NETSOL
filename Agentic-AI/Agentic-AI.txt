@@ -1,0 +1,11 @@
+Agentic AI
+
+- MCPs -> Model Context Protocol
+- 
+
+- Inference Engine (Env to run a model)
+- 
+
+
+Home Task:
+Create an Agentic AI system using Google ADK and A2A protocol to connect 2 or 3 models together and models are connected with 2-3 services individually using MCP.

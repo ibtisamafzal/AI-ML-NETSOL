@@ -85,6 +85,34 @@ Bag of Words (BoW):
 - BoW converts text into numerical vectors based on word frequency.
 - It ignores grammar and word order.
 - Useful for text classification, sentiment analysis, etc.
+- Problem: It ignores the order of words
+
+
+
+----------------------------------------------------------------------
+
+Lecture 25
+
+1. Feature Extraction:
+converting raw text into useful numerical features.
+
+
+Home Task:
+BoW
+TF-IDF
+N-grams
+Word Embeddings
+Sentence Embeddings
+Transformer Embeddings
+
+
+
+2. Feature Selection:
+- Cosine Similarity
+
+
+
+
 
 
 

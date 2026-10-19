@@ -1,0 +1,13 @@
+*(Important for Interview)
+
+What is Vectorization?
+Vectorization is the process of converting non-numerical data (such as text, images, or raw features) into these lists of numbers (vectors) so a Machine Learning model can process them.
+
+
+While vectorization is the broad umbrella concept of turning data into numbers, embeddings are a specific, intelligent type of vectorization.
+
+Think of it this way: All embeddings are vectors, but not all vectors are embeddings.
+
+
+Embeddings:
+Embeddings are a specific technique of vectorization that captures semantic meaning, context, and relationships in a dense format.
