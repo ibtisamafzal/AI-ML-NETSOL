@@ -3,7 +3,6 @@ NLTK = Natural Language Toolkit
 - WordNet Support
 - pip install nltk
 
-
 spaCy:
 - Production-Oriented
 - Excellent NER/ Dependency Parsing
@@ -68,7 +67,6 @@ WordNet:
 Removing Punctuation:
 - import string
 
-
 Stopwords:
 
 Sentence Tokenization:
@@ -76,6 +74,8 @@ Sentence Tokenization:
 Text Normalization:
 
 Regular Expression: Allow us to find patterns.
+
+Named Entity Recognition
 
 Chunking: 
 Chinking: Removing unwanted tokens from the chunk.
@@ -86,7 +86,6 @@ Bag of Words (BoW):
 - It ignores grammar and word order.
 - Useful for text classification, sentiment analysis, etc.
 - Problem: It ignores the order of words
-
 
 
 ----------------------------------------------------------------------
@@ -104,7 +103,6 @@ N-grams
 Word Embeddings
 Sentence Embeddings
 Transformer Embeddings
-
 
 
 2. Feature Selection:

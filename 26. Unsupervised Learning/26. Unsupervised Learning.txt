@@ -4,5 +4,6 @@ Unsupervised Learning:
 - Data does not contain a target column
 
 
-K-Means Clustering:
-- 
+K-Means Clustering
+Hierarchical Clustering
+DBSCAN Clustering

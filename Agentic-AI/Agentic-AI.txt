@@ -4,8 +4,19 @@ Agentic AI
 - 
 
 - Inference Engine (Env to run a model)
-- 
+
 
 
 Home Task:
-Create an Agentic AI system using Google ADK and A2A protocol to connect 2 or 3 models together and models are connected with 2-3 services individually using MCP.
+Create an Agentic AI system using Google ADK and A2A protocol to connect 2 or 3 models together
+and models are connected with 2-3 services individually using MCP.
+
+
+
+Help me do this project:
+
+Create an Agentic AI system using Google ADK and the A2A protocol to connect 2 or 3 models, each connected to 2-3 services individually via MCP.
+
+I have to use models from Hugging Face but run them locally using an inference engine; I have installed Ollama.
+
+Tell me the prerequisites to install and any other technologies (they should be available to use for free). The models should not be very heavy because I don't have GPU power; however, I have 24GB of RAM with an Intel Core i7 processor.
