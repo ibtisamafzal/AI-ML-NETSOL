@@ -5,5 +5,24 @@ Unsupervised Learning:
 
 
 K-Means Clustering
+- Less Compute Expensive, Large Data, Less Variation
+
+
 Hierarchical Clustering
-DBSCAN Clustering
+- A lot of variation
+
+
+DBSCAN Clustering (Density-Based Spatial Clustering)
+- Unlabeled Data with Noise.
+
+
+Gaussian Mixture Model (GMM)
+
+
+Principal Component Analysis (PCA)
+- Reduces number of features while preserving as much variance as possible.
+- It makes visualization or downstream modeling easier.
+
+
+Autoencoders
+- Neural Network trained to reconstruct its output.
