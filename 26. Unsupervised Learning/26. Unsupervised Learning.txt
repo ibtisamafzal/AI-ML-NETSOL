@@ -26,3 +26,13 @@ Principal Component Analysis (PCA)
 
 Autoencoders
 - Neural Network trained to reconstruct its output.
+
+
+Association Rule Learning
+
+
+
+
+
+
+
