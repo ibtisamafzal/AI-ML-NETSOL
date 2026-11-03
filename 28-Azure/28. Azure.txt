@@ -1,0 +1,10 @@
+Testing Phase 1
+Deploy (Sandbox/ Testing Environment)
+- QA Testing [Manual (Postman), Automation(Selenium), Test Cases]
+
+
+Testing Phase 2
+Deploy (Staging Environment)
+
+
+Deploy (Production)
