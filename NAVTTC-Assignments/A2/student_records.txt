@@ -1,0 +1,7 @@
+Name: Adnan
+Roll Number: 12
+Marks: {'English': 80.0, 'Mathematics': 84.0, 'Computer Science': 90.0, 'Physics': 92.0, 'Pakistan Studies': 83.0}
+Percentage: 85.80%
+Grade: A
+Result: Pass
+----------------------------------------
