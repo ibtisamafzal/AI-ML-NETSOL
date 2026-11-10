@@ -1,29 +1,61 @@
-Testing Phase 1:
-Deploy (Sandbox/ Testing Environment)
-- QA Testing [Manual (Postman), Automation(Selenium), Test Cases]
-
-Testing Phase 2:
-Deploy (Staging Environment)
-
-Deploy (Production)
-
-
-App Service:
+Azure:
+1. App Services
 - Web App (frontend + backend)
 - App Function (backend/endpoint without frontend)
 
+2. VM (Virtual Machine)
 
-VM (Virtual Machine):
-
-
-Kubernetes Cluster:
+3. Kubernetes Cluster (Docker)
 - Enterprise Projects
 - To enable advance things like LoadBalancer etc.)
+
+-----------------------------------------------------------------------------------
+
+Development Environments:
+Testing Phase:
+Deploy (Sandbox/ Testing Environment)
+- QA Testing [Manual (Postman), Automation(Selenium), Test Cases]
+
+Stagging Phase:
+Deploy + QA
+
+Production Phase:
+QA + Deploy
+
+------------------------------------------------------------------------------------
 
 CI/CD Pipeline:
 - .yaml (Installation, Configuration & Authentication, Python Program, Test Cases, Deploy)
 
+------------------------------------------------------------------------------------
 
-Azure Data Factory (ADF):
-- 
+Azure Data Factory (ADF)
+
+Azure Anomaly Detection -> Microsoft Fabrics (Data Preprocessing)
+Azure Personalizer -> Azure Machine Learning
+Azure Metrics Advisor -> Azure Monitor (Trend Analyzer)
+Azure Immersive Reader
+Azure Content Moderator -> Azure AI Content Safety (Feedback from user -> Violations)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
