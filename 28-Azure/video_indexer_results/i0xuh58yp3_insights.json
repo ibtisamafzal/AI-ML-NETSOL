@@ -1,0 +1,2740 @@
+{
+  "partition": null,
+  "description": null,
+  "privacyMode": "Private",
+  "state": "Processed",
+  "accountId": "26b25774-e457-4cfc-9cfc-db21dc1fb560",
+  "id": "i0xuh58yp3",
+  "name": "Ibtisam Afzal _ MLSA Guide Video _ Microsoft Learn Student Ambassadors _ Onboard",
+  "userName": "Muhammad Ibtisam Afzal",
+  "created": "2026-11-13T05:40:04.81+00:00",
+  "isOwned": true,
+  "isEditable": false,
+  "isBase": true,
+  "durationInSeconds": 81,
+  "duration": "0:01:21.860454",
+  "summarizedInsights": {
+    "name": "Ibtisam Afzal _ MLSA Guide Video _ Microsoft Learn Student Ambassadors _ Onboard",
+    "id": "i0xuh58yp3",
+    "privacyMode": "Private",
+    "duration": {
+      "time": "0:01:21.860454",
+      "seconds": 81.9
+    },
+    "thumbnailVideoId": "i0xuh58yp3",
+    "thumbnailId": "04fc9228-b607-4051-90a8-3cc32f629a97",
+    "faces": [],
+    "keywords": [
+      {
+        "isTranscript": true,
+        "id": 1,
+        "name": "learning",
+        "appearances": [
+          {
+            "startTime": "0:00:30.3",
+            "endTime": "0:00:34.82",
+            "startSeconds": 30.3,
+            "endSeconds": 34.8
+          }
+        ]
+      },
+      {
+        "isTranscript": true,
+        "id": 2,
+        "name": "coding",
+        "appearances": [
+          {
+            "startTime": "0:00:35.06",
+            "endTime": "0:00:38.5",
+            "startSeconds": 35.1,
+            "endSeconds": 38.5
+          },
+          {
+            "startTime": "0:01:08.79",
+            "endTime": "0:01:15.11",
+            "startSeconds": 68.8,
+            "endSeconds": 75.1
+          }
+        ]
+      },
+      {
+        "isTranscript": true,
+        "id": 3,
+        "name": "resources",
+        "appearances": [
+          {
+            "startTime": "0:00:23.94",
+            "endTime": "0:00:30.02",
+            "startSeconds": 23.9,
+            "endSeconds": 30
+          },
+          {
+            "startTime": "0:00:51.11",
+            "endTime": "0:00:54.71",
+            "startSeconds": 51.1,
+            "endSeconds": 54.7
+          }
+        ]
+      },
+      {
+        "isTranscript": true,
+        "id": 4,
+        "name": "enjoyed",
+        "appearances": [
+          {
+            "startTime": "0:00:35.06",
+            "endTime": "0:00:38.5",
+            "startSeconds": 35.1,
+            "endSeconds": 38.5
+          },
+          {
+            "startTime": "0:00:54.95",
+            "endTime": "0:00:58.63",
+            "startSeconds": 55,
+            "endSeconds": 58.6
+          }
+        ]
+      },
+      {
+        "isTranscript": true,
+        "id": 5,
+        "name": "skills",
+        "appearances": [
+          {
+            "startTime": "0:00:07.15",
+            "endTime": "0:00:19.59",
+            "startSeconds": 7.2,
+            "endSeconds": 19.6
+          },
+          {
+            "startTime": "0:01:03.27",
+            "endTime": "0:01:08.71",
+            "startSeconds": 63.3,
+            "endSeconds": 68.7
+          }
+        ]
+      },
+      {
+        "isTranscript": true,
+        "id": 6,
+        "name": "learn",
+        "appearances": [
+          {
+            "startTime": "0:00:07.15",
+            "endTime": "0:00:19.59",
+            "startSeconds": 7.2,
+            "endSeconds": 19.6
+          },
+          {
+            "startTime": "0:00:30.3",
+            "endTime": "0:00:34.82",
+            "startSeconds": 30.3,
+            "endSeconds": 34.8
+          },
+          {
+            "startTime": "0:00:54.95",
+            "endTime": "0:01:04.0666667",
+            "startSeconds": 55,
+            "endSeconds": 64.1
+          }
+        ]
+      },
+      {
+        "isTranscript": true,
+        "id": 7,
+        "name": "microsoft",
+        "appearances": [
+          {
+            "startTime": "0:00:00.43",
+            "endTime": "0:00:06.99",
+            "startSeconds": 0.4,
+            "endSeconds": 7
+          },
+          {
+            "startTime": "0:00:38.66",
+            "endTime": "0:00:47.0666667",
+            "startSeconds": 38.7,
+            "endSeconds": 47.1
+          }
+        ]
+      },
+      {
+        "isTranscript": true,
+        "id": 8,
+        "name": "learned",
+        "appearances": [
+          {
+            "startTime": "0:00:07.15",
+            "endTime": "0:00:19.59",
+            "startSeconds": 7.2,
+            "endSeconds": 19.6
+          },
+          {
+            "startTime": "0:00:54.95",
+            "endTime": "0:00:58.63",
+            "startSeconds": 55,
+            "endSeconds": 58.6
+          }
+        ]
+      },
+      {
+        "isTranscript": true,
+        "id": 11,
+        "name": "earned",
+        "appearances": [
+          {
+            "startTime": "0:00:07.15",
+            "endTime": "0:00:19.59",
+            "startSeconds": 7.2,
+            "endSeconds": 19.6
+          },
+          {
+            "startTime": "0:00:38.66",
+            "endTime": "0:00:46.42",
+            "startSeconds": 38.7,
+            "endSeconds": 46.4
+          },
+          {
+            "startTime": "0:00:54.95",
+            "endTime": "0:00:58.63",
+            "startSeconds": 55,
+            "endSeconds": 58.6
+          }
+        ]
+      },
+      {
+        "isTranscript": true,
+        "id": 12,
+        "name": "test",
+        "appearances": [
+          {
+            "startTime": "0:00:38.66",
+            "endTime": "0:00:50.74",
+            "startSeconds": 38.7,
+            "endSeconds": 50.7
+          }
+        ]
+      },
+      {
+        "isTranscript": false,
+        "id": 9,
+        "name": "html",
+        "appearances": [
+          {
+            "startTime": "0:00:07.15",
+            "endTime": "0:00:21.0666667",
+            "startSeconds": 7.2,
+            "endSeconds": 21.1
+          }
+        ]
+      },
+      {
+        "isTranscript": false,
+        "id": 10,
+        "name": "javascript",
+        "appearances": [
+          {
+            "startTime": "0:00:07.15",
+            "endTime": "0:00:21.0666667",
+            "startSeconds": 7.2,
+            "endSeconds": 21.1
+          }
+        ]
+      }
+    ],
+    "sentiments": [
+      {
+        "sentimentKey": "Neutral",
+        "seenDurationRatio": 0.9076,
+        "appearances": [
+          {
+            "startTime": "0:00:00",
+            "endTime": "0:00:35.06",
+            "startSeconds": 0,
+            "endSeconds": 35.1
+          },
+          {
+            "startTime": "0:00:38.5",
+            "endTime": "0:00:46.54",
+            "startSeconds": 38.5,
+            "endSeconds": 46.5
+          },
+          {
+            "startTime": "0:00:50.74",
+            "endTime": "0:01:21.860454",
+            "startSeconds": 50.7,
+            "endSeconds": 81.9
+          }
+        ]
+      },
+      {
+        "sentimentKey": "Positive",
+        "seenDurationRatio": 0.0928,
+        "appearances": [
+          {
+            "startTime": "0:00:35.06",
+            "endTime": "0:00:38.5",
+            "startSeconds": 35.1,
+            "endSeconds": 38.5
+          },
+          {
+            "startTime": "0:00:46.54",
+            "endTime": "0:00:50.74",
+            "startSeconds": 46.5,
+            "endSeconds": 50.7
+          }
+        ]
+      }
+    ],
+    "emotions": [
+      {
+        "type": "Joy",
+        "seenDurationRatio": 0.0928,
+        "appearances": [
+          {
+            "startTime": "0:00:35.06",
+            "endTime": "0:00:38.5",
+            "startSeconds": 35.1,
+            "endSeconds": 38.5
+          },
+          {
+            "startTime": "0:00:46.54",
+            "endTime": "0:00:50.74",
+            "startSeconds": 46.5,
+            "endSeconds": 50.7
+          }
+        ]
+      }
+    ],
+    "audioEffects": [],
+    "labels": [
+      {
+        "id": 1,
+        "name": "human face",
+        "appearances": [
+          {
+            "confidence": 0.996,
+            "startTime": "0:00:01.0333333",
+            "endTime": "0:01:21.0666667",
+            "startSeconds": 1,
+            "endSeconds": 81.1
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "clothing",
+        "appearances": [
+          {
+            "confidence": 0.9877,
+            "startTime": "0:00:01.0333333",
+            "endTime": "0:01:21.0666667",
+            "startSeconds": 1,
+            "endSeconds": 81.1
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "person",
+        "appearances": [
+          {
+            "confidence": 0.9813,
+            "startTime": "0:00:01.0333333",
+            "endTime": "0:00:10.0666667",
+            "startSeconds": 1,
+            "endSeconds": 10.1
+          },
+          {
+            "confidence": 0.9763,
+            "startTime": "0:00:14.0333333",
+            "endTime": "0:00:18.0666667",
+            "startSeconds": 14,
+            "endSeconds": 18.1
+          },
+          {
+            "confidence": 0.9801,
+            "startTime": "0:00:22.0333333",
+            "endTime": "0:00:40.0666667",
+            "startSeconds": 22,
+            "endSeconds": 40.1
+          },
+          {
+            "confidence": 0.9837,
+            "startTime": "0:00:48.0333333",
+            "endTime": "0:01:21.0666667",
+            "startSeconds": 48,
+            "endSeconds": 81.1
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "wall",
+        "appearances": [
+          {
+            "confidence": 0.972,
+            "startTime": "0:00:01.0333333",
+            "endTime": "0:00:10.0666667",
+            "startSeconds": 1,
+            "endSeconds": 10.1
+          },
+          {
+            "confidence": 0.9656,
+            "startTime": "0:00:14.0333333",
+            "endTime": "0:00:17.0666667",
+            "startSeconds": 14,
+            "endSeconds": 17.1
+          },
+          {
+            "confidence": 0.9691,
+            "startTime": "0:00:22.0333333",
+            "endTime": "0:00:40.0666667",
+            "startSeconds": 22,
+            "endSeconds": 40.1
+          },
+          {
+            "confidence": 0.9686,
+            "startTime": "0:00:48.0333333",
+            "endTime": "0:00:59.0666667",
+            "startSeconds": 48,
+            "endSeconds": 59.1
+          },
+          {
+            "confidence": 0.9662,
+            "startTime": "0:01:05.0333333",
+            "endTime": "0:01:21.0666667",
+            "startSeconds": 65,
+            "endSeconds": 81.1
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "man",
+        "appearances": [
+          {
+            "confidence": 0.954,
+            "startTime": "0:00:01.0333333",
+            "endTime": "0:00:08.0666667",
+            "startSeconds": 1,
+            "endSeconds": 8.1
+          },
+          {
+            "confidence": 0.9685,
+            "startTime": "0:00:13.0333333",
+            "endTime": "0:00:16.0666667",
+            "startSeconds": 13,
+            "endSeconds": 16.1
+          },
+          {
+            "confidence": 0.9557,
+            "startTime": "0:00:24.0333333",
+            "endTime": "0:00:36.0666667",
+            "startSeconds": 24,
+            "endSeconds": 36.1
+          },
+          {
+            "confidence": 0.9586,
+            "startTime": "0:00:40.0333333",
+            "endTime": "0:00:52.0666667",
+            "startSeconds": 40,
+            "endSeconds": 52.1
+          },
+          {
+            "confidence": 0.965,
+            "startTime": "0:00:56.0333333",
+            "endTime": "0:00:59.0666667",
+            "startSeconds": 56,
+            "endSeconds": 59.1
+          },
+          {
+            "confidence": 0.9595,
+            "startTime": "0:01:06.0333333",
+            "endTime": "0:01:19.0666667",
+            "startSeconds": 66,
+            "endSeconds": 79.1
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "glasses",
+        "appearances": [
+          {
+            "confidence": 0.9548,
+            "startTime": "0:00:04.0333333",
+            "endTime": "0:00:04.0666667",
+            "startSeconds": 4,
+            "endSeconds": 4.1
+          },
+          {
+            "confidence": 0.9582,
+            "startTime": "0:00:27.0333333",
+            "endTime": "0:00:27.0666667",
+            "startSeconds": 27,
+            "endSeconds": 27.1
+          },
+          {
+            "confidence": 0.9533,
+            "startTime": "0:00:33.0333333",
+            "endTime": "0:00:35.0666667",
+            "startSeconds": 33,
+            "endSeconds": 35.1
+          },
+          {
+            "confidence": 0.9755,
+            "startTime": "0:00:48.0333333",
+            "endTime": "0:00:50.0666667",
+            "startSeconds": 48,
+            "endSeconds": 50.1
+          },
+          {
+            "confidence": 0.9802,
+            "startTime": "0:01:04.0333333",
+            "endTime": "0:01:04.0666667",
+            "startSeconds": 64,
+            "endSeconds": 64.1
+          },
+          {
+            "confidence": 0.9695,
+            "startTime": "0:01:09.0333333",
+            "endTime": "0:01:12.0666667",
+            "startSeconds": 69,
+            "endSeconds": 72.1
+          },
+          {
+            "confidence": 0.9791,
+            "startTime": "0:01:17.0333333",
+            "endTime": "0:01:20.0666667",
+            "startSeconds": 77,
+            "endSeconds": 80.1
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "name": "text",
+        "appearances": [
+          {
+            "confidence": 0.9894,
+            "startTime": "0:00:19.0333333",
+            "endTime": "0:00:21.0666667",
+            "startSeconds": 19,
+            "endSeconds": 21.1
+          },
+          {
+            "confidence": 0.9707,
+            "startTime": "0:00:41.0333333",
+            "endTime": "0:00:47.0666667",
+            "startSeconds": 41,
+            "endSeconds": 47.1
+          },
+          {
+            "confidence": 0.9557,
+            "startTime": "0:01:04.0333333",
+            "endTime": "0:01:04.0666667",
+            "startSeconds": 64,
+            "endSeconds": 64.1
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "shirt",
+        "appearances": [
+          {
+            "confidence": 0.9517,
+            "startTime": "0:00:18.0333333",
+            "endTime": "0:00:18.0666667",
+            "startSeconds": 18,
+            "endSeconds": 18.1
+          }
+        ]
+      }
+    ],
+    "framePatterns": [
+      {
+        "displayName": null,
+        "id": 1,
+        "name": "Black",
+        "appearances": [
+          {
+            "confidence": 0,
+            "startTime": "0:00:00.0333333",
+            "endTime": "0:00:00.3333333",
+            "startSeconds": 0,
+            "endSeconds": 0.3
+          },
+          {
+            "confidence": 0,
+            "startTime": "0:01:21.5333333",
+            "endTime": "0:01:21.7666667",
+            "startSeconds": 81.5,
+            "endSeconds": 81.8
+          }
+        ]
+      }
+    ],
+    "brands": [
+      {
+        "referenceId": "Microsoft_Office",
+        "referenceUrl": "http://en.wikipedia.org/wiki/Microsoft_Office",
+        "confidence": 0.87,
+        "description": "Microsoft Office is an office suite of applications, servers, and services developed by Microsoft. It was first announced by Bill Gates on 1 August 1988, at COMDEX in Las Vegas. Initially a marketing term for a bundled set of applications, the first version of Office contained Microsoft Word, Microsoft Excel, and Microsoft PowerPoint.",
+        "seenDuration": 7.7,
+        "id": 3,
+        "name": "Microsoft Office",
+        "appearances": [
+          {
+            "startTime": "0:00:38.66",
+            "endTime": "0:00:46.42",
+            "startSeconds": 38.7,
+            "endSeconds": 46.4
+          }
+        ]
+      },
+      {
+        "referenceId": "Microsoft_Word",
+        "referenceUrl": "http://en.wikipedia.org/wiki/Microsoft_Word",
+        "confidence": 0.3,
+        "description": "Microsoft Word is a word processor developed by Microsoft. It was first released in 1983 under the name Multi-Tool Word for Xenix systems. Subsequent versions were later written for several other platforms including IBM PCs running DOS (1983), Apple Macintosh running Mac OS (1985), AT&T Unix PC (1985), Atari ST (1988), OS/2 (1989), Microsoft Windows (1989) and SCO Unix (1994).",
+        "seenDuration": 6.1,
+        "id": 4,
+        "name": "Microsoft Word",
+        "appearances": [
+          {
+            "startTime": "0:00:41.0333333",
+            "endTime": "0:00:47.0666667",
+            "startSeconds": 41,
+            "endSeconds": 47.1
+          }
+        ]
+      },
+      {
+        "referenceId": "Microsoft",
+        "referenceUrl": "http://en.wikipedia.org/wiki/Microsoft",
+        "confidence": 1,
+        "description": "Microsoft Corporation /ˈmaɪkrəˌsɒft, -roʊ-, -ˌsɔːft/ (commonly referred to as Microsoft) is an American multinational technology company headquartered in Redmond, Washington, that develops, manufactures, licenses, supports and sells computer software, consumer electronics and personal computers and services.",
+        "seenDuration": 6.1,
+        "id": 5,
+        "name": "Microsoft",
+        "appearances": [
+          {
+            "startTime": "0:00:41.0333333",
+            "endTime": "0:00:47.0666667",
+            "startSeconds": 41,
+            "endSeconds": 47.1
+          }
+        ]
+      },
+      {
+        "referenceId": "Coursera",
+        "referenceUrl": "http://en.wikipedia.org/wiki/Coursera",
+        "confidence": 0.8,
+        "description": "Coursera /kərˈsɛrə/ is a venture-backed, for-profit, educational technology company that offers massive open online courses (MOOCs).",
+        "seenDuration": 3.6,
+        "id": 1,
+        "name": "Coursera",
+        "appearances": [
+          {
+            "startTime": "0:00:19.87",
+            "endTime": "0:00:23.47",
+            "startSeconds": 19.9,
+            "endSeconds": 23.5
+          }
+        ]
+      },
+      {
+        "referenceId": "YouTube",
+        "referenceUrl": "http://en.wikipedia.org/wiki/YouTube",
+        "confidence": 0.46,
+        "description": "YouTube is a video-sharing website headquartered in San Bruno, California, United States. The service was created by three former PayPal employees in February 2005. In November 2006, it was bought by Google for US$1.65 billion. YouTube now operates as one of Google's subsidiaries.",
+        "seenDuration": 3.6,
+        "id": 2,
+        "name": "YouTube",
+        "appearances": [
+          {
+            "startTime": "0:00:19.87",
+            "endTime": "0:00:23.47",
+            "startSeconds": 19.9,
+            "endSeconds": 23.5
+          }
+        ]
+      }
+    ],
+    "namedLocations": [
+      {
+        "referenceId": null,
+        "referenceUrl": null,
+        "confidence": 0.53,
+        "description": null,
+        "seenDuration": 6.3,
+        "id": 2,
+        "name": "university",
+        "appearances": [
+          {
+            "startTime": "0:01:08.79",
+            "endTime": "0:01:15.11",
+            "startSeconds": 68.8,
+            "endSeconds": 75.1
+          }
+        ]
+      },
+      {
+        "referenceId": null,
+        "referenceUrl": null,
+        "confidence": 0.93,
+        "description": null,
+        "seenDuration": 4.3,
+        "id": 1,
+        "name": "campus",
+        "appearances": [
+          {
+            "startTime": "0:00:58.87",
+            "endTime": "0:01:03.19",
+            "startSeconds": 58.9,
+            "endSeconds": 63.2
+          }
+        ]
+      }
+    ],
+    "namedPeople": [
+      {
+        "referenceId": null,
+        "referenceUrl": null,
+        "confidence": 1,
+        "description": null,
+        "seenDuration": 6.6,
+        "id": 1,
+        "name": "Ipti Saham Akzal",
+        "appearances": [
+          {
+            "startTime": "0:00:00.43",
+            "endTime": "0:00:06.99",
+            "startSeconds": 0.4,
+            "endSeconds": 7
+          }
+        ]
+      }
+    ],
+    "statistics": {
+      "correspondenceCount": 0,
+      "speakerTalkToListenRatio": {
+        "1": 1
+      },
+      "speakerLongestMonolog": {
+        "1": 77
+      },
+      "speakerNumberOfFragments": {
+        "1": 15
+      },
+      "speakerWordCount": {
+        "1": 244
+      }
+    },
+    "topics": [
+      {
+        "referenceUrl": null,
+        "iptcName": "education/school/college and university/university",
+        "iabName": "Education",
+        "confidence": 0.9794,
+        "id": 1,
+        "name": "Education/Major Concepts in Education/Udacity",
+        "appearances": [
+          {
+            "startTime": "0:00:19.87",
+            "endTime": "0:00:23.47",
+            "startSeconds": 19.9,
+            "endSeconds": 23.5
+          }
+        ]
+      },
+      {
+        "referenceUrl": null,
+        "iptcName": "education/online and remote learning",
+        "iabName": "Education",
+        "confidence": 0.9539,
+        "id": 2,
+        "name": "Education/Major Concepts in Education/Coursera",
+        "appearances": [
+          {
+            "startTime": "0:00:19.87",
+            "endTime": "0:00:23.47",
+            "startSeconds": 19.9,
+            "endSeconds": 23.5
+          }
+        ]
+      },
+      {
+        "referenceUrl": null,
+        "iptcName": "education",
+        "iabName": "Education",
+        "confidence": 0.9366,
+        "id": 3,
+        "name": "Education",
+        "appearances": [
+          {
+            "startTime": "0:00:19.87",
+            "endTime": "0:01:15.11",
+            "startSeconds": 19.9,
+            "endSeconds": 75.1
+          }
+        ]
+      },
+      {
+        "referenceUrl": null,
+        "iptcName": "science and technology",
+        "iabName": "Education",
+        "confidence": 0.7668,
+        "id": 4,
+        "name": "Education/Technology",
+        "appearances": [
+          {
+            "startTime": "0:00:00.43",
+            "endTime": "0:00:30.02",
+            "startSeconds": 0.4,
+            "endSeconds": 30
+          }
+        ]
+      },
+      {
+        "referenceUrl": null,
+        "iptcName": "education/online and remote learning",
+        "iabName": "Education",
+        "confidence": 0.6819,
+        "id": 5,
+        "name": "Education/Major Concepts in Education/Open Online Courses",
+        "appearances": [
+          {
+            "startTime": "0:00:19.87",
+            "endTime": "0:00:23.47",
+            "startSeconds": 19.9,
+            "endSeconds": 23.5
+          },
+          {
+            "startTime": "0:00:35.06",
+            "endTime": "0:00:50.74",
+            "startSeconds": 35.1,
+            "endSeconds": 50.7
+          }
+        ]
+      },
+      {
+        "referenceUrl": null,
+        "iptcName": "education/teaching and learning",
+        "iabName": "Education",
+        "confidence": 0.6446,
+        "id": 6,
+        "name": "Education/Major Concepts in Education/E Learning",
+        "appearances": [
+          {
+            "startTime": "0:00:19.87",
+            "endTime": "0:00:50.74",
+            "startSeconds": 19.9,
+            "endSeconds": 50.7
+          }
+        ]
+      },
+      {
+        "referenceUrl": null,
+        "iptcName": "economy, business and finance/economic sector/computing and information technology/computer security",
+        "iabName": "Technology & Computing",
+        "confidence": 0.6071,
+        "id": 7,
+        "name": "Technology/Computer S",
+        "appearances": [
+          {
+            "startTime": "0:00:07.15",
+            "endTime": "0:00:23.47",
+            "startSeconds": 7.2,
+            "endSeconds": 23.5
+          }
+        ]
+      },
+      {
+        "referenceUrl": null,
+        "iptcName": "education/teaching and learning",
+        "iabName": "Education",
+        "confidence": 0.5531,
+        "id": 8,
+        "name": "Education/Learning New Things",
+        "appearances": [
+          {
+            "startTime": "0:00:19.87",
+            "endTime": "0:00:23.47",
+            "startSeconds": 19.9,
+            "endSeconds": 23.5
+          },
+          {
+            "startTime": "0:00:35.06",
+            "endTime": "0:00:50.74",
+            "startSeconds": 35.1,
+            "endSeconds": 50.7
+          }
+        ]
+      }
+    ]
+  },
+  "videos": [
+    {
+      "accountId": "26b25774-e457-4cfc-9cfc-db21dc1fb560",
+      "id": "i0xuh58yp3",
+      "state": "Processed",
+      "moderationState": "OK",
+      "reviewState": "None",
+      "privacyMode": "Private",
+      "processingProgress": "100%",
+      "failureMessage": "",
+      "externalId": null,
+      "externalUrl": null,
+      "metadata": null,
+      "insights": {
+        "version": "1.0.0.0",
+        "duration": "0:01:21.860454",
+        "sourceLanguage": "en-US",
+        "sourceLanguages": [
+          "en-US"
+        ],
+        "language": "en-US",
+        "languages": [
+          "en-US"
+        ],
+        "transcript": [
+          {
+            "id": 1,
+            "text": "Hello Microsoft, my name is Ipti Saham Akzal and I am currently a second year student of Bachelor of Computer Science at COMSET Saiwal.",
+            "confidence": 0.7747,
+            "speakerId": 1,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:00.43",
+                "adjustedEnd": "0:00:06.99",
+                "start": "0:00:00.43",
+                "end": "0:00:06.99"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "text": "So talking about the technical skills that I have learned so far are C, C++, Python and during my recent semester break I have decided to learn front-end development using HTML, CSS and JavaScript.",
+            "confidence": 0.7747,
+            "speakerId": 1,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:07.15",
+                "adjustedEnd": "0:00:19.59",
+                "start": "0:00:07.15",
+                "end": "0:00:19.59"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "text": "I started techie courses on platforms like Coursera and YouTube.",
+            "confidence": 0.7747,
+            "speakerId": 1,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:19.87",
+                "adjustedEnd": "0:00:23.47",
+                "start": "0:00:19.87",
+                "end": "0:00:23.47"
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "text": "These resources enable me to make some amazing projects like clone websites, e-mail templates, and much more.",
+            "confidence": 0.8868,
+            "speakerId": 1,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:23.94",
+                "adjustedEnd": "0:00:30.02",
+                "start": "0:00:23.94",
+                "end": "0:00:30.02"
+              }
+            ]
+          },
+          {
+            "id": 5,
+            "text": "While I was learning, I realized that I really like help learning people too.",
+            "confidence": 0.8868,
+            "speakerId": 1,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:30.3",
+                "adjustedEnd": "0:00:34.82",
+                "start": "0:00:30.3",
+                "end": "0:00:34.82"
+              }
+            ]
+          },
+          {
+            "id": 6,
+            "text": "I enjoyed showing my friends how to do cool things with coding.",
+            "confidence": 0.8868,
+            "speakerId": 1,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:35.06",
+                "adjustedEnd": "0:00:38.5",
+                "start": "0:00:35.06",
+                "end": "0:00:38.5"
+              }
+            ]
+          },
+          {
+            "id": 7,
+            "text": "I have also passed the Microsoft Office Special Ed test by scoring 953 marks out of 1000 and earned a certificate from Microsoft.",
+            "confidence": 0.8868,
+            "speakerId": 1,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:38.66",
+                "adjustedEnd": "0:00:46.42",
+                "start": "0:00:38.66",
+                "end": "0:00:46.42"
+              }
+            ]
+          },
+          {
+            "id": 8,
+            "text": "And my teachers encouraged me to guide and help my peers with this test too.",
+            "confidence": 0.8868,
+            "speakerId": 1,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:46.54",
+                "adjustedEnd": "0:00:50.74",
+                "start": "0:00:46.54",
+                "end": "0:00:50.74"
+              }
+            ]
+          },
+          {
+            "id": 9,
+            "text": "so I shared them tips, strategies, and resources for it.",
+            "confidence": 0.9288,
+            "speakerId": 1,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:51.11",
+                "adjustedEnd": "0:00:54.71",
+                "start": "0:00:51.11",
+                "end": "0:00:54.71"
+              }
+            ]
+          },
+          {
+            "id": 10,
+            "text": "This showed me that sharing what I have learned is what I enjoyed the most.",
+            "confidence": 0.9288,
+            "speakerId": 1,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:54.95",
+                "adjustedEnd": "0:00:58.63",
+                "start": "0:00:54.95",
+                "end": "0:00:58.63"
+              }
+            ]
+          },
+          {
+            "id": 11,
+            "text": "As an MLSA, my goal is to create a supportive environment at my campus.",
+            "confidence": 0.9288,
+            "speakerId": 1,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:58.87",
+                "adjustedEnd": "0:01:03.19",
+                "start": "0:00:58.87",
+                "end": "0:01:03.19"
+              }
+            ]
+          },
+          {
+            "id": 12,
+            "text": "With my skills and dedication, I aim to help my fellow students to explore the fascinating technologies.",
+            "confidence": 0.9288,
+            "speakerId": 1,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:01:03.27",
+                "adjustedEnd": "0:01:08.71",
+                "start": "0:01:03.27",
+                "end": "0:01:08.71"
+              }
+            ]
+          },
+          {
+            "id": 13,
+            "text": "From coding workshops to study sessions, I will be there to help my university colleagues in tackling their challenges.",
+            "confidence": 0.9288,
+            "speakerId": 1,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:01:08.79",
+                "adjustedEnd": "0:01:15.11",
+                "start": "0:01:08.79",
+                "end": "0:01:15.11"
+              }
+            ]
+          },
+          {
+            "id": 14,
+            "text": "Being approachable and ready to assist is what I'm aiming for.",
+            "confidence": 0.8048,
+            "speakerId": 1,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:01:15.48",
+                "adjustedEnd": "0:01:19",
+                "start": "0:01:15.48",
+                "end": "0:01:19"
+              }
+            ]
+          },
+          {
+            "id": 15,
+            "text": "So that's it from my side.",
+            "confidence": 0.8048,
+            "speakerId": 1,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:01:19.16",
+                "adjustedEnd": "0:01:20.6",
+                "start": "0:01:19.16",
+                "end": "0:01:20.6"
+              }
+            ]
+          },
+          {
+            "id": 16,
+            "text": "Thanks for listening.",
+            "confidence": 0.8048,
+            "speakerId": 1,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:01:20.6",
+                "adjustedEnd": "0:01:21.48",
+                "start": "0:01:20.6",
+                "end": "0:01:21.48"
+              }
+            ]
+          }
+        ],
+        "ocrMaxTokenCount": 50000,
+        "ocrAnalyzedTokenCount": 55,
+        "ocr": [
+          {
+            "id": 1,
+            "text": "HTML",
+            "confidence": 0.994,
+            "left": 159,
+            "top": 44,
+            "width": 153,
+            "height": 31,
+            "angle": -1,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:18.0333333",
+                "adjustedEnd": "0:00:21.0666667",
+                "start": "0:00:18.0333333",
+                "end": "0:00:21.0666667"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "text": "JavaScript",
+            "confidence": 0.993,
+            "left": 103,
+            "top": 468,
+            "width": 224,
+            "height": 45,
+            "angle": 0,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:19.0333333",
+                "adjustedEnd": "0:00:21.0666667",
+                "start": "0:00:19.0333333",
+                "end": "0:00:21.0666667"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "text": "Microsoft",
+            "confidence": 0.998,
+            "left": 193,
+            "top": 143,
+            "width": 121,
+            "height": 21,
+            "angle": 0,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:41.0333333",
+                "adjustedEnd": "0:00:47.0666667",
+                "start": "0:00:41.0333333",
+                "end": "0:00:47.0666667"
+              },
+              {
+                "adjustedStart": "0:01:00.0333333",
+                "adjustedEnd": "0:01:04.0666667",
+                "start": "0:01:00.0333333",
+                "end": "0:01:04.0666667"
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "text": "Office Specialist",
+            "confidence": 0.9975,
+            "left": 194,
+            "top": 167,
+            "width": 122,
+            "height": 16,
+            "angle": 0,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:41.0333333",
+                "adjustedEnd": "0:00:47.0666667",
+                "start": "0:00:41.0333333",
+                "end": "0:00:47.0666667"
+              }
+            ]
+          },
+          {
+            "id": 5,
+            "text": "WORD",
+            "confidence": 0.996,
+            "left": 198,
+            "top": 233,
+            "width": 105,
+            "height": 25,
+            "angle": -1,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:41.0333333",
+                "adjustedEnd": "0:00:47.0666667",
+                "start": "0:00:41.0333333",
+                "end": "0:00:47.0666667"
+              }
+            ]
+          },
+          {
+            "id": 6,
+            "text": "ASSOCIATE",
+            "confidence": 0.982,
+            "left": 179,
+            "top": 301,
+            "width": 149,
+            "height": 21,
+            "angle": 0,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:41.0333333",
+                "adjustedEnd": "0:00:47.0666667",
+                "start": "0:00:41.0333333",
+                "end": "0:00:47.0666667"
+              }
+            ]
+          },
+          {
+            "id": 7,
+            "text": "Learn",
+            "confidence": 0.998,
+            "left": 236,
+            "top": 162,
+            "width": 63,
+            "height": 17,
+            "angle": 0,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:01:00.0333333",
+                "adjustedEnd": "0:01:04.0666667",
+                "start": "0:01:00.0333333",
+                "end": "0:01:04.0666667"
+              }
+            ]
+          },
+          {
+            "id": 8,
+            "text": "STUDENT AMBASSADOR",
+            "confidence": 0.9965,
+            "left": 169,
+            "top": 208,
+            "width": 199,
+            "height": 22,
+            "angle": 0,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:01:00.0333333",
+                "adjustedEnd": "0:01:04.0666667",
+                "start": "0:01:00.0333333",
+                "end": "0:01:04.0666667"
+              }
+            ]
+          }
+        ],
+        "keywords": [
+          {
+            "id": 1,
+            "text": "learning",
+            "confidence": 0.7217,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:30.3",
+                "adjustedEnd": "0:00:34.82",
+                "start": "0:00:30.3",
+                "end": "0:00:34.82"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "text": "coding",
+            "confidence": 0.7217,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:35.06",
+                "adjustedEnd": "0:00:38.5",
+                "start": "0:00:35.06",
+                "end": "0:00:38.5"
+              },
+              {
+                "adjustedStart": "0:01:08.79",
+                "adjustedEnd": "0:01:15.11",
+                "start": "0:01:08.79",
+                "end": "0:01:15.11"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "text": "resources",
+            "confidence": 0.7217,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:23.94",
+                "adjustedEnd": "0:00:30.02",
+                "start": "0:00:23.94",
+                "end": "0:00:30.02"
+              },
+              {
+                "adjustedStart": "0:00:51.11",
+                "adjustedEnd": "0:00:54.71",
+                "start": "0:00:51.11",
+                "end": "0:00:54.71"
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "text": "enjoyed",
+            "confidence": 0.7217,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:35.06",
+                "adjustedEnd": "0:00:38.5",
+                "start": "0:00:35.06",
+                "end": "0:00:38.5"
+              },
+              {
+                "adjustedStart": "0:00:54.95",
+                "adjustedEnd": "0:00:58.63",
+                "start": "0:00:54.95",
+                "end": "0:00:58.63"
+              }
+            ]
+          },
+          {
+            "id": 5,
+            "text": "skills",
+            "confidence": 0.7217,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:07.15",
+                "adjustedEnd": "0:00:19.59",
+                "start": "0:00:07.15",
+                "end": "0:00:19.59"
+              },
+              {
+                "adjustedStart": "0:01:03.27",
+                "adjustedEnd": "0:01:08.71",
+                "start": "0:01:03.27",
+                "end": "0:01:08.71"
+              }
+            ]
+          },
+          {
+            "id": 6,
+            "text": "learn",
+            "confidence": 0.6806,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:07.15",
+                "adjustedEnd": "0:00:19.59",
+                "start": "0:00:07.15",
+                "end": "0:00:19.59"
+              },
+              {
+                "adjustedStart": "0:00:30.3",
+                "adjustedEnd": "0:00:34.82",
+                "start": "0:00:30.3",
+                "end": "0:00:34.82"
+              },
+              {
+                "adjustedStart": "0:00:54.95",
+                "adjustedEnd": "0:00:58.63",
+                "start": "0:00:54.95",
+                "end": "0:00:58.63"
+              },
+              {
+                "adjustedStart": "0:01:00.0333333",
+                "adjustedEnd": "0:01:04.0666667",
+                "start": "0:01:00.0333333",
+                "end": "0:01:04.0666667"
+              }
+            ]
+          },
+          {
+            "id": 7,
+            "text": "microsoft",
+            "confidence": 0.6211,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:00.43",
+                "adjustedEnd": "0:00:06.99",
+                "start": "0:00:00.43",
+                "end": "0:00:06.99"
+              },
+              {
+                "adjustedStart": "0:00:38.66",
+                "adjustedEnd": "0:00:46.42",
+                "start": "0:00:38.66",
+                "end": "0:00:46.42"
+              },
+              {
+                "adjustedStart": "0:00:41.0333333",
+                "adjustedEnd": "0:00:47.0666667",
+                "start": "0:00:41.0333333",
+                "end": "0:00:47.0666667"
+              }
+            ]
+          },
+          {
+            "id": 8,
+            "text": "learned",
+            "confidence": 0.6211,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:07.15",
+                "adjustedEnd": "0:00:19.59",
+                "start": "0:00:07.15",
+                "end": "0:00:19.59"
+              },
+              {
+                "adjustedStart": "0:00:54.95",
+                "adjustedEnd": "0:00:58.63",
+                "start": "0:00:54.95",
+                "end": "0:00:58.63"
+              }
+            ]
+          },
+          {
+            "id": 9,
+            "text": "html",
+            "confidence": 0.6211,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:07.15",
+                "adjustedEnd": "0:00:19.59",
+                "start": "0:00:07.15",
+                "end": "0:00:19.59"
+              },
+              {
+                "adjustedStart": "0:00:18.0333333",
+                "adjustedEnd": "0:00:21.0666667",
+                "start": "0:00:18.0333333",
+                "end": "0:00:21.0666667"
+              }
+            ]
+          },
+          {
+            "id": 10,
+            "text": "javascript",
+            "confidence": 0.6211,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:07.15",
+                "adjustedEnd": "0:00:19.59",
+                "start": "0:00:07.15",
+                "end": "0:00:19.59"
+              },
+              {
+                "adjustedStart": "0:00:19.0333333",
+                "adjustedEnd": "0:00:21.0666667",
+                "start": "0:00:19.0333333",
+                "end": "0:00:21.0666667"
+              }
+            ]
+          },
+          {
+            "id": 11,
+            "text": "earned",
+            "confidence": 0.6211,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:07.15",
+                "adjustedEnd": "0:00:19.59",
+                "start": "0:00:07.15",
+                "end": "0:00:19.59"
+              },
+              {
+                "adjustedStart": "0:00:38.66",
+                "adjustedEnd": "0:00:46.42",
+                "start": "0:00:38.66",
+                "end": "0:00:46.42"
+              },
+              {
+                "adjustedStart": "0:00:54.95",
+                "adjustedEnd": "0:00:58.63",
+                "start": "0:00:54.95",
+                "end": "0:00:58.63"
+              }
+            ]
+          },
+          {
+            "id": 12,
+            "text": "test",
+            "confidence": 0.6211,
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:38.66",
+                "adjustedEnd": "0:00:46.42",
+                "start": "0:00:38.66",
+                "end": "0:00:46.42"
+              },
+              {
+                "adjustedStart": "0:00:46.54",
+                "adjustedEnd": "0:00:50.74",
+                "start": "0:00:46.54",
+                "end": "0:00:50.74"
+              }
+            ]
+          }
+        ],
+        "topics": [
+          {
+            "id": 1,
+            "name": "Udacity",
+            "referenceId": "Education/Major Concepts in Education/Udacity",
+            "referenceType": "VideoIndexer",
+            "iptcName": "education/school/college and university/university",
+            "confidence": 0.9794,
+            "iabName": "Education",
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:19.87",
+                "adjustedEnd": "0:00:23.47",
+                "start": "0:00:19.87",
+                "end": "0:00:23.47"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Coursera",
+            "referenceId": "Education/Major Concepts in Education/Coursera",
+            "referenceType": "VideoIndexer",
+            "iptcName": "education/online and remote learning",
+            "confidence": 0.9539,
+            "iabName": "Education",
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:19.87",
+                "adjustedEnd": "0:00:23.47",
+                "start": "0:00:19.87",
+                "end": "0:00:23.47"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "name": "Education",
+            "referenceId": "Education",
+            "referenceType": "VideoIndexer",
+            "iptcName": "education",
+            "confidence": 0.9366,
+            "iabName": "Education",
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:19.87",
+                "adjustedEnd": "0:01:15.11",
+                "start": "0:00:19.87",
+                "end": "0:01:15.11"
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "name": "Technology",
+            "referenceId": "Education/Technology",
+            "referenceType": "VideoIndexer",
+            "iptcName": "science and technology",
+            "confidence": 0.7668,
+            "iabName": "Education",
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:00.43",
+                "adjustedEnd": "0:00:30.02",
+                "start": "0:00:00.43",
+                "end": "0:00:30.02"
+              }
+            ]
+          },
+          {
+            "id": 5,
+            "name": "Open Online Courses",
+            "referenceId": "Education/Major Concepts in Education/Open Online Courses",
+            "referenceType": "VideoIndexer",
+            "iptcName": "education/online and remote learning",
+            "confidence": 0.6819,
+            "iabName": "Education",
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:19.87",
+                "adjustedEnd": "0:00:23.47",
+                "start": "0:00:19.87",
+                "end": "0:00:23.47"
+              },
+              {
+                "adjustedStart": "0:00:35.06",
+                "adjustedEnd": "0:00:50.74",
+                "start": "0:00:35.06",
+                "end": "0:00:50.74"
+              }
+            ]
+          },
+          {
+            "id": 6,
+            "name": "E Learning",
+            "referenceId": "Education/Major Concepts in Education/E Learning",
+            "referenceType": "VideoIndexer",
+            "iptcName": "education/teaching and learning",
+            "confidence": 0.6446,
+            "iabName": "Education",
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:19.87",
+                "adjustedEnd": "0:00:50.74",
+                "start": "0:00:19.87",
+                "end": "0:00:50.74"
+              }
+            ]
+          },
+          {
+            "id": 7,
+            "name": "Computer S",
+            "referenceId": "Technology/Computer S",
+            "referenceType": "VideoIndexer",
+            "iptcName": "economy, business and finance/economic sector/computing and information technology/computer security",
+            "confidence": 0.6071,
+            "iabName": "Technology & Computing",
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:07.15",
+                "adjustedEnd": "0:00:23.47",
+                "start": "0:00:07.15",
+                "end": "0:00:23.47"
+              }
+            ]
+          },
+          {
+            "id": 8,
+            "name": "Learning New Things",
+            "referenceId": "Education/Learning New Things",
+            "referenceType": "VideoIndexer",
+            "iptcName": "education/teaching and learning",
+            "confidence": 0.5531,
+            "iabName": "Education",
+            "language": "en-US",
+            "instances": [
+              {
+                "adjustedStart": "0:00:19.87",
+                "adjustedEnd": "0:00:23.47",
+                "start": "0:00:19.87",
+                "end": "0:00:23.47"
+              },
+              {
+                "adjustedStart": "0:00:35.06",
+                "adjustedEnd": "0:00:50.74",
+                "start": "0:00:35.06",
+                "end": "0:00:50.74"
+              }
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "id": 1,
+            "name": "human face",
+            "language": "en-US",
+            "instances": [
+              {
+                "confidence": 0.996,
+                "adjustedStart": "0:00:01.0333333",
+                "adjustedEnd": "0:01:21.0666667",
+                "start": "0:00:01.0333333",
+                "end": "0:01:21.0666667"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "name": "person",
+            "referenceId": "person",
+            "language": "en-US",
+            "instances": [
+              {
+                "confidence": 0.9813,
+                "adjustedStart": "0:00:01.0333333",
+                "adjustedEnd": "0:00:10.0666667",
+                "start": "0:00:01.0333333",
+                "end": "0:00:10.0666667"
+              },
+              {
+                "confidence": 0.9763,
+                "adjustedStart": "0:00:14.0333333",
+                "adjustedEnd": "0:00:18.0666667",
+                "start": "0:00:14.0333333",
+                "end": "0:00:18.0666667"
+              },
+              {
+                "confidence": 0.9801,
+                "adjustedStart": "0:00:22.0333333",
+                "adjustedEnd": "0:00:40.0666667",
+                "start": "0:00:22.0333333",
+                "end": "0:00:40.0666667"
+              },
+              {
+                "confidence": 0.9822,
+                "adjustedStart": "0:00:48.0333333",
+                "adjustedEnd": "0:01:00.0666667",
+                "start": "0:00:48.0333333",
+                "end": "0:01:00.0666667"
+              },
+              {
+                "confidence": 0.9542,
+                "adjustedStart": "0:01:02.0333333",
+                "adjustedEnd": "0:01:02.0666667",
+                "start": "0:01:02.0333333",
+                "end": "0:01:02.0666667"
+              },
+              {
+                "confidence": 0.9837,
+                "adjustedStart": "0:01:05.0333333",
+                "adjustedEnd": "0:01:21.0666667",
+                "start": "0:01:05.0333333",
+                "end": "0:01:21.0666667"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "name": "wall",
+            "referenceId": "structure/wall",
+            "language": "en-US",
+            "instances": [
+              {
+                "confidence": 0.972,
+                "adjustedStart": "0:00:01.0333333",
+                "adjustedEnd": "0:00:10.0666667",
+                "start": "0:00:01.0333333",
+                "end": "0:00:10.0666667"
+              },
+              {
+                "confidence": 0.9656,
+                "adjustedStart": "0:00:14.0333333",
+                "adjustedEnd": "0:00:17.0666667",
+                "start": "0:00:14.0333333",
+                "end": "0:00:17.0666667"
+              },
+              {
+                "confidence": 0.9691,
+                "adjustedStart": "0:00:22.0333333",
+                "adjustedEnd": "0:00:40.0666667",
+                "start": "0:00:22.0333333",
+                "end": "0:00:40.0666667"
+              },
+              {
+                "confidence": 0.9686,
+                "adjustedStart": "0:00:48.0333333",
+                "adjustedEnd": "0:00:59.0666667",
+                "start": "0:00:48.0333333",
+                "end": "0:00:59.0666667"
+              },
+              {
+                "confidence": 0.9662,
+                "adjustedStart": "0:01:05.0333333",
+                "adjustedEnd": "0:01:21.0666667",
+                "start": "0:01:05.0333333",
+                "end": "0:01:21.0666667"
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "name": "clothing",
+            "referenceId": "consumer goods/clothing",
+            "language": "en-US",
+            "instances": [
+              {
+                "confidence": 0.9587,
+                "adjustedStart": "0:00:01.0333333",
+                "adjustedEnd": "0:00:03.0666667",
+                "start": "0:00:01.0333333",
+                "end": "0:00:03.0666667"
+              },
+              {
+                "confidence": 0.97,
+                "adjustedStart": "0:00:05.0333333",
+                "adjustedEnd": "0:00:12.0666667",
+                "start": "0:00:05.0333333",
+                "end": "0:00:12.0666667"
+              },
+              {
+                "confidence": 0.9612,
+                "adjustedStart": "0:00:14.0333333",
+                "adjustedEnd": "0:00:15.0666667",
+                "start": "0:00:14.0333333",
+                "end": "0:00:15.0666667"
+              },
+              {
+                "confidence": 0.9602,
+                "adjustedStart": "0:00:17.0333333",
+                "adjustedEnd": "0:00:21.0666667",
+                "start": "0:00:17.0333333",
+                "end": "0:00:21.0666667"
+              },
+              {
+                "confidence": 0.9743,
+                "adjustedStart": "0:00:23.0333333",
+                "adjustedEnd": "0:00:26.0666667",
+                "start": "0:00:23.0333333",
+                "end": "0:00:26.0666667"
+              },
+              {
+                "confidence": 0.9649,
+                "adjustedStart": "0:00:28.0333333",
+                "adjustedEnd": "0:00:35.0666667",
+                "start": "0:00:28.0333333",
+                "end": "0:00:35.0666667"
+              },
+              {
+                "confidence": 0.953,
+                "adjustedStart": "0:00:37.0333333",
+                "adjustedEnd": "0:00:37.0666667",
+                "start": "0:00:37.0333333",
+                "end": "0:00:37.0666667"
+              },
+              {
+                "confidence": 0.9842,
+                "adjustedStart": "0:00:39.0333333",
+                "adjustedEnd": "0:00:39.0666667",
+                "start": "0:00:39.0333333",
+                "end": "0:00:39.0666667"
+              },
+              {
+                "confidence": 0.971,
+                "adjustedStart": "0:00:41.0333333",
+                "adjustedEnd": "0:01:11.0666667",
+                "start": "0:00:41.0333333",
+                "end": "0:01:11.0666667"
+              },
+              {
+                "confidence": 0.9681,
+                "adjustedStart": "0:01:14.0333333",
+                "adjustedEnd": "0:01:19.0666667",
+                "start": "0:01:14.0333333",
+                "end": "0:01:19.0666667"
+              },
+              {
+                "confidence": 0.9877,
+                "adjustedStart": "0:01:21.0333333",
+                "adjustedEnd": "0:01:21.0666667",
+                "start": "0:01:21.0333333",
+                "end": "0:01:21.0666667"
+              }
+            ]
+          },
+          {
+            "id": 5,
+            "name": "man",
+            "referenceId": "person/man",
+            "language": "en-US",
+            "instances": [
+              {
+                "confidence": 0.9506,
+                "adjustedStart": "0:00:01.0333333",
+                "adjustedEnd": "0:00:03.0666667",
+                "start": "0:00:01.0333333",
+                "end": "0:00:03.0666667"
+              },
+              {
+                "confidence": 0.9549,
+                "adjustedStart": "0:00:05.0333333",
+                "adjustedEnd": "0:00:05.0666667",
+                "start": "0:00:05.0333333",
+                "end": "0:00:05.0666667"
+              },
+              {
+                "confidence": 0.954,
+                "adjustedStart": "0:00:07.0333333",
+                "adjustedEnd": "0:00:08.0666667",
+                "start": "0:00:07.0333333",
+                "end": "0:00:08.0666667"
+              },
+              {
+                "confidence": 0.9685,
+                "adjustedStart": "0:00:13.0333333",
+                "adjustedEnd": "0:00:16.0666667",
+                "start": "0:00:13.0333333",
+                "end": "0:00:16.0666667"
+              },
+              {
+                "confidence": 0.9652,
+                "adjustedStart": "0:00:24.0333333",
+                "adjustedEnd": "0:00:28.0666667",
+                "start": "0:00:24.0333333",
+                "end": "0:00:28.0666667"
+              },
+              {
+                "confidence": 0.9643,
+                "adjustedStart": "0:00:30.0333333",
+                "adjustedEnd": "0:00:32.0666667",
+                "start": "0:00:30.0333333",
+                "end": "0:00:32.0666667"
+              },
+              {
+                "confidence": 0.9677,
+                "adjustedStart": "0:00:34.0333333",
+                "adjustedEnd": "0:00:34.0666667",
+                "start": "0:00:34.0333333",
+                "end": "0:00:34.0666667"
+              },
+              {
+                "confidence": 0.9557,
+                "adjustedStart": "0:00:36.0333333",
+                "adjustedEnd": "0:00:36.0666667",
+                "start": "0:00:36.0333333",
+                "end": "0:00:36.0666667"
+              },
+              {
+                "confidence": 0.9717,
+                "adjustedStart": "0:00:40.0333333",
+                "adjustedEnd": "0:00:41.0666667",
+                "start": "0:00:40.0333333",
+                "end": "0:00:41.0666667"
+              },
+              {
+                "confidence": 0.9731,
+                "adjustedStart": "0:00:43.0333333",
+                "adjustedEnd": "0:00:48.0666667",
+                "start": "0:00:43.0333333",
+                "end": "0:00:48.0666667"
+              },
+              {
+                "confidence": 0.9586,
+                "adjustedStart": "0:00:50.0333333",
+                "adjustedEnd": "0:00:52.0666667",
+                "start": "0:00:50.0333333",
+                "end": "0:00:52.0666667"
+              },
+              {
+                "confidence": 0.965,
+                "adjustedStart": "0:00:56.0333333",
+                "adjustedEnd": "0:00:59.0666667",
+                "start": "0:00:56.0333333",
+                "end": "0:00:59.0666667"
+              },
+              {
+                "confidence": 0.9592,
+                "adjustedStart": "0:01:06.0333333",
+                "adjustedEnd": "0:01:07.0666667",
+                "start": "0:01:06.0333333",
+                "end": "0:01:07.0666667"
+              },
+              {
+                "confidence": 0.9641,
+                "adjustedStart": "0:01:10.0333333",
+                "adjustedEnd": "0:01:10.0666667",
+                "start": "0:01:10.0333333",
+                "end": "0:01:10.0666667"
+              },
+              {
+                "confidence": 0.9602,
+                "adjustedStart": "0:01:13.0333333",
+                "adjustedEnd": "0:01:15.0666667",
+                "start": "0:01:13.0333333",
+                "end": "0:01:15.0666667"
+              },
+              {
+                "confidence": 0.9595,
+                "adjustedStart": "0:01:18.0333333",
+                "adjustedEnd": "0:01:19.0666667",
+                "start": "0:01:18.0333333",
+                "end": "0:01:19.0666667"
+              }
+            ]
+          },
+          {
+            "id": 6,
+            "name": "glasses",
+            "language": "en-US",
+            "instances": [
+              {
+                "confidence": 0.9548,
+                "adjustedStart": "0:00:04.0333333",
+                "adjustedEnd": "0:00:04.0666667",
+                "start": "0:00:04.0333333",
+                "end": "0:00:04.0666667"
+              },
+              {
+                "confidence": 0.9582,
+                "adjustedStart": "0:00:27.0333333",
+                "adjustedEnd": "0:00:27.0666667",
+                "start": "0:00:27.0333333",
+                "end": "0:00:27.0666667"
+              },
+              {
+                "confidence": 0.9596,
+                "adjustedStart": "0:00:33.0333333",
+                "adjustedEnd": "0:00:33.0666667",
+                "start": "0:00:33.0333333",
+                "end": "0:00:33.0666667"
+              },
+              {
+                "confidence": 0.9533,
+                "adjustedStart": "0:00:35.0333333",
+                "adjustedEnd": "0:00:35.0666667",
+                "start": "0:00:35.0333333",
+                "end": "0:00:35.0666667"
+              },
+              {
+                "confidence": 0.9525,
+                "adjustedStart": "0:00:48.0333333",
+                "adjustedEnd": "0:00:48.0666667",
+                "start": "0:00:48.0333333",
+                "end": "0:00:48.0666667"
+              },
+              {
+                "confidence": 0.9755,
+                "adjustedStart": "0:00:50.0333333",
+                "adjustedEnd": "0:00:50.0666667",
+                "start": "0:00:50.0333333",
+                "end": "0:00:50.0666667"
+              },
+              {
+                "confidence": 0.9802,
+                "adjustedStart": "0:01:04.0333333",
+                "adjustedEnd": "0:01:04.0666667",
+                "start": "0:01:04.0333333",
+                "end": "0:01:04.0666667"
+              },
+              {
+                "confidence": 0.9807,
+                "adjustedStart": "0:01:09.0333333",
+                "adjustedEnd": "0:01:09.0666667",
+                "start": "0:01:09.0333333",
+                "end": "0:01:09.0666667"
+              },
+              {
+                "confidence": 0.9695,
+                "adjustedStart": "0:01:12.0333333",
+                "adjustedEnd": "0:01:12.0666667",
+                "start": "0:01:12.0333333",
+                "end": "0:01:12.0666667"
+              },
+              {
+                "confidence": 0.9623,
+                "adjustedStart": "0:01:17.0333333",
+                "adjustedEnd": "0:01:17.0666667",
+                "start": "0:01:17.0333333",
+                "end": "0:01:17.0666667"
+              },
+              {
+                "confidence": 0.9791,
+                "adjustedStart": "0:01:20.0333333",
+                "adjustedEnd": "0:01:20.0666667",
+                "start": "0:01:20.0333333",
+                "end": "0:01:20.0666667"
+              }
+            ]
+          },
+          {
+            "id": 7,
+            "name": "shirt",
+            "referenceId": "consumer goods/clothing/shirt",
+            "language": "en-US",
+            "instances": [
+              {
+                "confidence": 0.9517,
+                "adjustedStart": "0:00:18.0333333",
+                "adjustedEnd": "0:00:18.0666667",
+                "start": "0:00:18.0333333",
+                "end": "0:00:18.0666667"
+              }
+            ]
+          },
+          {
+            "id": 8,
+            "name": "text",
+            "referenceId": "communication/writing/text",
+            "language": "en-US",
+            "instances": [
+              {
+                "confidence": 0.9894,
+                "adjustedStart": "0:00:19.0333333",
+                "adjustedEnd": "0:00:21.0666667",
+                "start": "0:00:19.0333333",
+                "end": "0:00:21.0666667"
+              },
+              {
+                "confidence": 0.9776,
+                "adjustedStart": "0:00:41.0333333",
+                "adjustedEnd": "0:00:41.0666667",
+                "start": "0:00:41.0333333",
+                "end": "0:00:41.0666667"
+              },
+              {
+                "confidence": 0.9608,
+                "adjustedStart": "0:00:43.0333333",
+                "adjustedEnd": "0:00:44.0666667",
+                "start": "0:00:43.0333333",
+                "end": "0:00:44.0666667"
+              },
+              {
+                "confidence": 0.9707,
+                "adjustedStart": "0:00:46.0333333",
+                "adjustedEnd": "0:00:47.0666667",
+                "start": "0:00:46.0333333",
+                "end": "0:00:47.0666667"
+              },
+              {
+                "confidence": 0.9557,
+                "adjustedStart": "0:01:04.0333333",
+                "adjustedEnd": "0:01:04.0666667",
+                "start": "0:01:04.0333333",
+                "end": "0:01:04.0666667"
+              }
+            ]
+          }
+        ],
+        "scenes": [
+          {
+            "id": 1,
+            "instances": [
+              {
+                "adjustedStart": "0:00:00.0333333",
+                "adjustedEnd": "0:01:20.9666667",
+                "start": "0:00:00.0333333",
+                "end": "0:01:20.9666667"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "instances": [
+              {
+                "adjustedStart": "0:01:20.9666667",
+                "adjustedEnd": "0:01:21.7666667",
+                "start": "0:01:20.9666667",
+                "end": "0:01:21.7666667"
+              }
+            ]
+          }
+        ],
+        "shots": [
+          {
+            "id": 1,
+            "keyFrames": [
+              {
+                "id": 1,
+                "instances": [
+                  {
+                    "thumbnailId": "a674398a-aee1-4d81-ba2d-2778b69b7562",
+                    "adjustedStart": "0:00:00.6666667",
+                    "adjustedEnd": "0:00:00.7",
+                    "start": "0:00:00.6666667",
+                    "end": "0:00:00.7"
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "instances": [
+                  {
+                    "thumbnailId": "012f0824-be8b-451e-9a3b-28f8f1e0288b",
+                    "adjustedStart": "0:00:01",
+                    "adjustedEnd": "0:00:01.0333333",
+                    "start": "0:00:01",
+                    "end": "0:00:01.0333333"
+                  }
+                ]
+              }
+            ],
+            "instances": [
+              {
+                "adjustedStart": "0:00:00.0333333",
+                "adjustedEnd": "0:01:20.9666667",
+                "start": "0:00:00.0333333",
+                "end": "0:01:20.9666667"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "keyFrames": [
+              {
+                "id": 3,
+                "instances": [
+                  {
+                    "thumbnailId": "bb83f9b6-e1c3-42b1-9b04-6cd5c2201663",
+                    "adjustedStart": "0:01:21.1666667",
+                    "adjustedEnd": "0:01:21.2",
+                    "start": "0:01:21.1666667",
+                    "end": "0:01:21.2"
+                  }
+                ]
+              },
+              {
+                "id": 4,
+                "instances": [
+                  {
+                    "thumbnailId": "4c031b05-cc00-4766-85d2-43973d71f9ec",
+                    "adjustedStart": "0:01:21.3666667",
+                    "adjustedEnd": "0:01:21.4",
+                    "start": "0:01:21.3666667",
+                    "end": "0:01:21.4"
+                  }
+                ]
+              }
+            ],
+            "instances": [
+              {
+                "adjustedStart": "0:01:20.9666667",
+                "adjustedEnd": "0:01:21.7666667",
+                "start": "0:01:20.9666667",
+                "end": "0:01:21.7666667"
+              }
+            ]
+          }
+        ],
+        "brands": [
+          {
+            "id": 1,
+            "referenceType": "Wiki",
+            "name": "Coursera",
+            "referenceId": "Coursera",
+            "referenceUrl": "http://en.wikipedia.org/wiki/Coursera",
+            "description": "Coursera /kərˈsɛrə/ is a venture-backed, for-profit, educational technology company that offers massive open online courses (MOOCs).",
+            "tags": [],
+            "confidence": 0.8,
+            "isCustom": false,
+            "instances": [
+              {
+                "brandType": "Transcript",
+                "instanceSource": "Transcript",
+                "adjustedStart": "0:00:19.87",
+                "adjustedEnd": "0:00:23.47",
+                "start": "0:00:19.87",
+                "end": "0:00:23.47"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "referenceType": "Wiki",
+            "name": "YouTube",
+            "referenceId": "YouTube",
+            "referenceUrl": "http://en.wikipedia.org/wiki/YouTube",
+            "description": "YouTube is a video-sharing website headquartered in San Bruno, California, United States. The service was created by three former PayPal employees in February 2005. In November 2006, it was bought by Google for US$1.65 billion. YouTube now operates as one of Google's subsidiaries.",
+            "tags": [],
+            "confidence": 0.46,
+            "isCustom": false,
+            "instances": [
+              {
+                "brandType": "Transcript",
+                "instanceSource": "Transcript",
+                "adjustedStart": "0:00:19.87",
+                "adjustedEnd": "0:00:23.47",
+                "start": "0:00:19.87",
+                "end": "0:00:23.47"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "referenceType": "Wiki",
+            "name": "Microsoft Office",
+            "referenceId": "Microsoft_Office",
+            "referenceUrl": "http://en.wikipedia.org/wiki/Microsoft_Office",
+            "description": "Microsoft Office is an office suite of applications, servers, and services developed by Microsoft. It was first announced by Bill Gates on 1 August 1988, at COMDEX in Las Vegas. Initially a marketing term for a bundled set of applications, the first version of Office contained Microsoft Word, Microsoft Excel, and Microsoft PowerPoint.",
+            "tags": [],
+            "confidence": 0.87,
+            "isCustom": false,
+            "instances": [
+              {
+                "brandType": "Transcript",
+                "instanceSource": "Transcript",
+                "adjustedStart": "0:00:38.66",
+                "adjustedEnd": "0:00:46.42",
+                "start": "0:00:38.66",
+                "end": "0:00:46.42"
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "referenceType": "Wiki",
+            "name": "Microsoft Word",
+            "referenceId": "Microsoft_Word",
+            "referenceUrl": "http://en.wikipedia.org/wiki/Microsoft_Word",
+            "description": "Microsoft Word is a word processor developed by Microsoft. It was first released in 1983 under the name Multi-Tool Word for Xenix systems. Subsequent versions were later written for several other platforms including IBM PCs running DOS (1983), Apple Macintosh running Mac OS (1985), AT&T Unix PC (1985), Atari ST (1988), OS/2 (1989), Microsoft Windows (1989) and SCO Unix (1994).",
+            "tags": [],
+            "confidence": 0.3,
+            "isCustom": false,
+            "instances": [
+              {
+                "brandType": "Ocr",
+                "instanceSource": "Ocr",
+                "adjustedStart": "0:00:41.0333333",
+                "adjustedEnd": "0:00:47.0666667",
+                "start": "0:00:41.0333333",
+                "end": "0:00:47.0666667"
+              }
+            ]
+          },
+          {
+            "id": 5,
+            "referenceType": "Wiki",
+            "name": "Microsoft",
+            "referenceId": "Microsoft",
+            "referenceUrl": "http://en.wikipedia.org/wiki/Microsoft",
+            "description": "Microsoft Corporation /ˈmaɪkrəˌsɒft, -roʊ-, -ˌsɔːft/ (commonly referred to as Microsoft) is an American multinational technology company headquartered in Redmond, Washington, that develops, manufactures, licenses, supports and sells computer software, consumer electronics and personal computers and services.",
+            "tags": [],
+            "confidence": 1,
+            "isCustom": false,
+            "instances": [
+              {
+                "brandType": "Ocr",
+                "instanceSource": "Ocr",
+                "adjustedStart": "0:00:41.0333333",
+                "adjustedEnd": "0:00:47.0666667",
+                "start": "0:00:41.0333333",
+                "end": "0:00:47.0666667"
+              }
+            ]
+          }
+        ],
+        "namedLocations": [
+          {
+            "id": 1,
+            "name": "campus",
+            "referenceId": null,
+            "referenceUrl": null,
+            "description": null,
+            "tags": [],
+            "confidence": 0.93,
+            "isCustom": false,
+            "instances": [
+              {
+                "instanceSource": "Transcript",
+                "adjustedStart": "0:00:58.87",
+                "adjustedEnd": "0:01:03.19",
+                "start": "0:00:58.87",
+                "end": "0:01:03.19"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "name": "university",
+            "referenceId": null,
+            "referenceUrl": null,
+            "description": null,
+            "tags": [],
+            "confidence": 0.53,
+            "isCustom": false,
+            "instances": [
+              {
+                "instanceSource": "Transcript",
+                "adjustedStart": "0:01:08.79",
+                "adjustedEnd": "0:01:15.11",
+                "start": "0:01:08.79",
+                "end": "0:01:15.11"
+              }
+            ]
+          }
+        ],
+        "namedPeople": [
+          {
+            "id": 1,
+            "name": "Ipti Saham Akzal",
+            "referenceId": null,
+            "referenceUrl": null,
+            "description": null,
+            "tags": [],
+            "confidence": 1,
+            "isCustom": false,
+            "instances": [
+              {
+                "instanceSource": "Transcript",
+                "adjustedStart": "0:00:00.43",
+                "adjustedEnd": "0:00:06.99",
+                "start": "0:00:00.43",
+                "end": "0:00:06.99"
+              }
+            ]
+          }
+        ],
+        "sentiments": [
+          {
+            "id": 1,
+            "averageScore": 0.5,
+            "sentimentType": "Neutral",
+            "instances": [
+              {
+                "adjustedStart": "0:00:00",
+                "adjustedEnd": "0:00:35.06",
+                "start": "0:00:00",
+                "end": "0:00:35.06"
+              },
+              {
+                "adjustedStart": "0:00:38.5",
+                "adjustedEnd": "0:00:46.54",
+                "start": "0:00:38.5",
+                "end": "0:00:46.54"
+              },
+              {
+                "adjustedStart": "0:00:50.74",
+                "adjustedEnd": "0:01:21.860454",
+                "start": "0:00:50.74",
+                "end": "0:01:21.860454"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "averageScore": 0.9466,
+            "sentimentType": "Positive",
+            "instances": [
+              {
+                "adjustedStart": "0:00:35.06",
+                "adjustedEnd": "0:00:38.5",
+                "start": "0:00:35.06",
+                "end": "0:00:38.5"
+              },
+              {
+                "adjustedStart": "0:00:46.54",
+                "adjustedEnd": "0:00:50.74",
+                "start": "0:00:46.54",
+                "end": "0:00:50.74"
+              }
+            ]
+          }
+        ],
+        "emotions": [
+          {
+            "id": 1,
+            "type": "Joy",
+            "instances": [
+              {
+                "confidence": 0.8051,
+                "adjustedStart": "0:00:35.06",
+                "adjustedEnd": "0:00:38.5",
+                "start": "0:00:35.06",
+                "end": "0:00:38.5"
+              },
+              {
+                "confidence": 0.5116,
+                "adjustedStart": "0:00:46.54",
+                "adjustedEnd": "0:00:50.74",
+                "start": "0:00:46.54",
+                "end": "0:00:50.74"
+              }
+            ]
+          }
+        ],
+        "blocks": [
+          {
+            "id": 0,
+            "instances": [
+              {
+                "adjustedStart": "0:00:00",
+                "adjustedEnd": "0:00:30.02",
+                "start": "0:00:00",
+                "end": "0:00:30.02"
+              }
+            ]
+          },
+          {
+            "id": 1,
+            "instances": [
+              {
+                "adjustedStart": "0:00:30.02",
+                "adjustedEnd": "0:01:03.19",
+                "start": "0:00:30.02",
+                "end": "0:01:03.19"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "instances": [
+              {
+                "adjustedStart": "0:01:03.19",
+                "adjustedEnd": "0:01:21.860454",
+                "start": "0:01:03.19",
+                "end": "0:01:21.860454"
+              }
+            ]
+          }
+        ],
+        "framePatterns": [
+          {
+            "id": 1,
+            "patternType": "Black",
+            "confidence": 1,
+            "displayName": null,
+            "instances": [
+              {
+                "adjustedStart": "0:00:00.0333333",
+                "adjustedEnd": "0:00:00.3333333",
+                "start": "0:00:00.0333333",
+                "end": "0:00:00.3333333"
+              },
+              {
+                "adjustedStart": "0:01:21.5333333",
+                "adjustedEnd": "0:01:21.7666667",
+                "start": "0:01:21.5333333",
+                "end": "0:01:21.7666667"
+              }
+            ]
+          }
+        ],
+        "speakers": [
+          {
+            "id": 1,
+            "name": "Speaker #1",
+            "instances": [
+              {
+                "adjustedStart": "0:00:00.43",
+                "adjustedEnd": "0:00:06.99",
+                "start": "0:00:00.43",
+                "end": "0:00:06.99"
+              },
+              {
+                "adjustedStart": "0:00:07.15",
+                "adjustedEnd": "0:00:19.59",
+                "start": "0:00:07.15",
+                "end": "0:00:19.59"
+              },
+              {
+                "adjustedStart": "0:00:19.87",
+                "adjustedEnd": "0:00:23.47",
+                "start": "0:00:19.87",
+                "end": "0:00:23.47"
+              },
+              {
+                "adjustedStart": "0:00:23.94",
+                "adjustedEnd": "0:00:30.02",
+                "start": "0:00:23.94",
+                "end": "0:00:30.02"
+              },
+              {
+                "adjustedStart": "0:00:30.3",
+                "adjustedEnd": "0:00:34.82",
+                "start": "0:00:30.3",
+                "end": "0:00:34.82"
+              },
+              {
+                "adjustedStart": "0:00:35.06",
+                "adjustedEnd": "0:00:38.5",
+                "start": "0:00:35.06",
+                "end": "0:00:38.5"
+              },
+              {
+                "adjustedStart": "0:00:38.66",
+                "adjustedEnd": "0:00:46.42",
+                "start": "0:00:38.66",
+                "end": "0:00:46.42"
+              },
+              {
+                "adjustedStart": "0:00:46.54",
+                "adjustedEnd": "0:00:50.74",
+                "start": "0:00:46.54",
+                "end": "0:00:50.74"
+              },
+              {
+                "adjustedStart": "0:00:51.11",
+                "adjustedEnd": "0:00:54.71",
+                "start": "0:00:51.11",
+                "end": "0:00:54.71"
+              },
+              {
+                "adjustedStart": "0:00:54.95",
+                "adjustedEnd": "0:00:58.63",
+                "start": "0:00:54.95",
+                "end": "0:00:58.63"
+              },
+              {
+                "adjustedStart": "0:00:58.87",
+                "adjustedEnd": "0:01:03.19",
+                "start": "0:00:58.87",
+                "end": "0:01:03.19"
+              },
+              {
+                "adjustedStart": "0:01:03.27",
+                "adjustedEnd": "0:01:08.71",
+                "start": "0:01:03.27",
+                "end": "0:01:08.71"
+              },
+              {
+                "adjustedStart": "0:01:08.79",
+                "adjustedEnd": "0:01:15.11",
+                "start": "0:01:08.79",
+                "end": "0:01:15.11"
+              },
+              {
+                "adjustedStart": "0:01:15.48",
+                "adjustedEnd": "0:01:19",
+                "start": "0:01:15.48",
+                "end": "0:01:19"
+              },
+              {
+                "adjustedStart": "0:01:19.16",
+                "adjustedEnd": "0:01:20.6",
+                "start": "0:01:19.16",
+                "end": "0:01:20.6"
+              },
+              {
+                "adjustedStart": "0:01:20.6",
+                "adjustedEnd": "0:01:21.48",
+                "start": "0:01:20.6",
+                "end": "0:01:21.48"
+              }
+            ]
+          }
+        ],
+        "textualContentModeration": {
+          "id": 0,
+          "bannedWordsCount": 0,
+          "bannedWordsRatio": 0,
+          "instances": []
+        },
+        "statistics": {
+          "correspondenceCount": 0,
+          "speakerTalkToListenRatio": {
+            "1": 1
+          },
+          "speakerLongestMonolog": {
+            "1": 77
+          },
+          "speakerNumberOfFragments": {
+            "1": 15
+          },
+          "speakerWordCount": {
+            "1": 244
+          }
+        }
+      },
+      "thumbnailId": "04fc9228-b607-4051-90a8-3cc32f629a97",
+      "width": 1280,
+      "height": 720,
+      "detectSourceLanguage": false,
+      "languageAutoDetectMode": "None",
+      "sourceLanguage": "en-US",
+      "sourceLanguages": [
+        "en-US"
+      ],
+      "language": "en-US",
+      "languages": [
+        "en-US"
+      ],
+      "indexingPreset": "Default",
+      "streamingPreset": "SingleBitrate",
+      "linguisticModelId": "00000000-0000-0000-0000-000000000000",
+      "personModelId": "00000000-0000-0000-0000-000000000000",
+      "logoGroupId": null,
+      "isAdult": false,
+      "excludedAIs": [
+        "Faces",
+        "Celebrities",
+        "KnownPeople",
+        "ShotType"
+      ],
+      "isSearchable": true,
+      "publishedUrl": "https://api.videoindexer.ai/internals/eastus/Accounts/26b25774-e457-4cfc-9cfc-db21dc1fb560/Videos/i0xuh58yp3/streaming-manifest/manifest.m3u8",
+      "publishedProxyUrl": null,
+      "viewToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJWZXJzaW9uIjoiMi4wLjAuMCIsIktleVZlcnNpb24iOiJkZjM5NTc0NGFlYjI0NzRkYmUxYTIyZWFmYzk0ZWJhMiIsIkFjY291bnRJZCI6IjI2YjI1Nzc0LWU0NTctNGNmYy05Y2ZjLWRiMjFkYzFmYjU2MCIsIkFjY291bnRUeXBlIjoiQ2xhc3NpYyIsIlZpZGVvSWQiOiJpMHh1aDU4eXAzIiwiUGVybWlzc2lvbiI6IlJlc3RyaWN0ZWRWaWV3ZXIiLCJFeHRlcm5hbFVzZXJJZCI6IjI0M0QxN0FBM0FFMzRDNENBNjU4RDJCOENCNzI2NjlFIiwiVXNlclR5cGUiOiJNaWNyb3NvZnRDb3JwQWFkIiwiSXNzdWVyTG9jYXRpb24iOiJlYXN0dXMiLCJuYmYiOjE3OTQ1NDgxNDksImV4cCI6MTc5NDU1MjA0OSwiaXNzIjoiaHR0cHM6Ly9hcGkudmlkZW9pbmRleGVyLmFpLyIsImF1ZCI6Imh0dHBzOi8vYXBpLnZpZGVvaW5kZXhlci5haS8ifQ.VEtbfQVVaj_el-Hxuj6gEEsSpkBcwol31DHIRF2rR5gsFmEApeG6DcNNGKCSpF4okDNsw6LRUsMYDJRn0935QevCAmBqHHZAKCh_0m3jbrTt6kQdxtsMtgr1eLCmN675aGcTLyKaHj0fNebpo2P6sbBUDGYB2mm6kLdxH3XdisG104FuRb6gIwlOziZulr-N0mei9PiCaOu80Wayzb1B-Yat8ag8uS2_ZBh-GhYpOqMgURPTkY73Wf5RjRMHe43DuXmgHKAG-rYFKDAlauizO-LPIlpHyx8nj_-ve93Zd8pWvFg_bqBzwiWUPn4uc2CqhBmrQCEoAvJ_vFKCyKPqsA"
+    }
+  ],
+  "videosRanges": [
+    {
+      "videoId": "i0xuh58yp3",
+      "range": {
+        "start": "0:00:00",
+        "end": "0:01:21.860454"
+      }
+    }
+  ]
+}

@@ -1,3 +1,9 @@
+How to connect with azure services:
+- using API (Endpoint and Keys)
+- using Entra ID (Groups, Permissions, Services)
+
+
+-----------------------------------------------------------------------------------
 Azure:
 1. App Services
 - Web App (frontend + backend)
