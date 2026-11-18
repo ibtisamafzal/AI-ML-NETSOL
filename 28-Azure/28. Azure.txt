@@ -37,6 +37,9 @@ CI/CD Pipeline:
 
 Azure Data Factory (ADF)
 
+PySpark
+Snowflake
+
 Azure Anomaly Detection -> Microsoft Fabrics (Data Preprocessing)
 Azure Personalizer -> Azure Machine Learning
 Azure Metrics Advisor -> Azure Monitor (Trend Analyzer)

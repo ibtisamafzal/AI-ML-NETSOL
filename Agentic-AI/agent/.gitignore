@@ -1,0 +1,47 @@
+# Virtual Environments
+.venv/
+venv/
+env/
+
+# Python Bytecode & Caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Environment Variables & Secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Runtime Artifacts, Logs & Outputs
+logs/
+*.log
+runs/
+reports/
+data/
+!data/.gitkeep
+
+# Local Helper Scripts & OS Files
+AnacondaHere.bat
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+.cursor/
+*.swp
+*.swo
+```[cite: 1]
+
+---
+
+### Notes on Specific Folders
+* **`data/`, `runs/`, `reports/`, `logs/`**: Ignored by default so generated outputs, telemetry logs, and local datasets don't bloat your repository. If you have static input files in `data/` that you *do* want tracked, remove `data/` from the list or selectively un-ignore them using `!data/your_file.json`[cite: 1].
+* **`ui/` and `adk_ui/`**: If either of these contains a Node/React frontend, add `node_modules/`, `dist/`, and `.next/` to the file as well[cite: 1].

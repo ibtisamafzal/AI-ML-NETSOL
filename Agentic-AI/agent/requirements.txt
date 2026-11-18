@@ -1,0 +1,12 @@
+# Versions below were tested together (Python 3.12). Python 3.10+ is required.
+google-adk[a2a,mcp]==2.12.0
+litellm==1.106.0
+mcp==2.3.0
+uvicorn==0.54.0
+fastapi==0.141.1      # web UI server
+httpx==0.28.1
+
+# Third-party MCP servers (run locally via "python -m", no Node.js needed)
+duckduckgo-mcp-server==0.7.0
+mcp-server-fetch==2026.10.19
+mcp-server-time==2026.10.19

@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Pipeline</title>
+<style>
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --surface-2:#f1f2f5; --border:#e4e6eb; --border-2:#d6d9e0;
+  --text:#15171c; --muted:#667085; --faint:#98a2b3;
+  --accent:#4f46e5; --accent-soft:#eef0ff; --accent-ink:#ffffff;
+  --ok:#16a34a; --ok-soft:#e8f7ee; --warn:#c77700; --warn-soft:#fff4e0; --err:#d92d20; --err-soft:#fdecea;
+  --c-orch:#64748b; --c-researcher:#0d9488; --c-analyst:#d97706; --c-writer:#7c3aed; --c-router:#64748b;
+  --radius:14px; --shadow:0 1px 2px rgba(16,24,40,.05),0 1px 3px rgba(16,24,40,.06);
+  --mono:ui-monospace,"Cascadia Code","SF Mono",Consolas,Menlo,monospace;
+  --sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+:root[data-theme="dark"]{
+  --bg:#0e1015; --surface:#151821; --surface-2:#1c202b; --border:#262b38; --border-2:#313748;
+  --text:#e8eaf0; --muted:#98a2b3; --faint:#6b7488;
+  --accent:#8b8cf8; --accent-soft:#1f2140; --accent-ink:#0e1015;
+  --ok:#4ade80; --ok-soft:#14261c; --warn:#fbbf24; --warn-soft:#2a2112; --err:#f87171; --err-soft:#2c1618;
+  --c-researcher:#2dd4bf; --c-analyst:#fbbf24; --c-writer:#a78bfa; --c-orch:#94a3b8; --c-router:#94a3b8;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1015; --surface:#151821; --surface-2:#1c202b; --border:#262b38; --border-2:#313748;
+    --text:#e8eaf0; --muted:#98a2b3; --faint:#6b7488;
+    --accent:#8b8cf8; --accent-soft:#1f2140; --accent-ink:#0e1015;
+    --ok:#4ade80; --ok-soft:#14261c; --warn:#fbbf24; --warn-soft:#2a2112; --err:#f87171; --err-soft:#2c1618;
+    --c-researcher:#2dd4bf; --c-analyst:#fbbf24; --c-writer:#a78bfa; --c-orch:#94a3b8; --c-router:#94a3b8;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);font:14px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+.mono{font-family:var(--mono)}
+.muted{color:var(--muted)} .faint{color:var(--faint)}
+[hidden]{display:none!important}
+[data-agent="researcher_agent"]{--c:var(--c-researcher)}
+[data-agent="analyst_agent"]{--c:var(--c-analyst)}
+[data-agent="writer_agent"]{--c:var(--c-writer)}
+[data-agent="router_agent"]{--c:var(--c-router)}
+[data-agent="orchestrator"]{--c:var(--c-orch)}
+
+/* ---------- layout ---------- */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 28px;position:sticky;top:0;z-index:20;
+  background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:650;letter-spacing:-.01em}
+.brand small{font-weight:450;color:var(--muted);font-size:12.5px}
+.brand svg{width:22px;height:22px;color:var(--accent)}
+.top-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;position:relative}
+main{max-width:1320px;margin:0 auto;padding:22px 28px 60px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+
+/* ---------- small controls ---------- */
+.btn{border:1px solid var(--border-2);background:var(--surface);border-radius:10px;height:34px;padding:0 14px;font-weight:550;
+  transition:background .15s,border-color .15s,transform .05s}
+.btn:hover{background:var(--surface-2)} .btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.06);background:var(--accent)}
+.btn.danger{color:var(--err);border-color:color-mix(in srgb,var(--err) 40%,var(--border))}
+.btn.ghost{background:transparent;font-weight:500;color:var(--muted)} .btn.ghost:hover{color:var(--text)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.icon-btn{width:34px;height:34px;border-radius:10px;border:1px solid transparent;background:transparent;color:var(--muted);font-size:16px}
+.icon-btn:hover{background:var(--surface-2);color:var(--text)}
+kbd{font:11px var(--mono);padding:1px 5px;border-radius:5px;background:rgba(255,255,255,.22);margin-left:6px}
+.seg{display:inline-flex;background:var(--surface-2);padding:3px;border-radius:10px;gap:2px}
+.seg button{border:0;background:transparent;border-radius:8px;padding:4px 11px;color:var(--muted);font-weight:550;font-size:13px;height:26px}
+.seg button.on{background:var(--surface);color:var(--text);box-shadow:var(--shadow)}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:3px 9px;border-radius:999px;border:1px solid var(--border);
+  background:var(--surface);color:var(--muted);white-space:nowrap}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--faint);flex:none}
+.dot.on{background:var(--ok)} .dot.off{background:var(--err)} .dot.mid{background:var(--warn)}
+.pop{position:absolute;top:42px;right:0;width:380px;max-height:380px;overflow:auto;background:var(--surface);border:1px solid var(--border-2);
+  border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.14);padding:6px;z-index:30}
+.pop .item{display:flex;flex-direction:column;gap:1px;width:100%;text-align:left;background:transparent;border:0;border-radius:8px;padding:8px 10px}
+.pop .item:hover{background:var(--surface-2)} .pop .item b{font-weight:550;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pop .empty{padding:14px;color:var(--muted);text-align:center}
+
+/* ---------- composer ---------- */
+.composer{padding:14px 16px 12px}
+.input-row{display:flex;gap:12px;align-items:flex-end}
+textarea{flex:1;resize:none;border:0;outline:0;background:transparent;color:var(--text);font:inherit;font-size:16px;line-height:1.5;min-height:28px;max-height:140px;padding:4px 2px}
+textarea::placeholder{color:var(--faint)}
+.composer-actions{display:flex;gap:10px;align-items:center}
+.examples{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+.examples .chip{cursor:pointer} .examples .chip:hover{color:var(--text);border-color:var(--border-2)}
+.composer:focus-within{border-color:color-mix(in srgb,var(--accent) 50%,var(--border));box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent)}
+
+/* ---------- flow map ---------- */
+.flow{padding:16px 18px 18px}
+.flow-head{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:14px}
+.narr{display:flex;align-items:center;gap:9px;font-weight:550;min-width:0}
+.narr span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.narr .pulse{width:9px;height:9px;border-radius:50%;background:var(--faint);flex:none}
+.narr.running .pulse{background:var(--accent);animation:pulse 1.2s ease-in-out infinite}
+.narr.ok .pulse{background:var(--ok)} .narr.failed .pulse{background:var(--err)} .narr.cancelled .pulse{background:var(--warn)}
+.clock{font:600 13px var(--mono);color:var(--muted);flex:none}
+.nodes{display:flex;align-items:stretch;gap:0;overflow-x:auto;padding:4px 2px 6px}
+.node{flex:1 1 0;min-width:148px;border:1px solid var(--border);border-radius:12px;padding:11px 12px;background:var(--surface);position:relative;
+  transition:border-color .2s,box-shadow .2s,background .2s,opacity .2s}
+.node.slim{flex:0 1 112px;min-width:104px}
+.node .nh{display:flex;align-items:center;gap:8px;font-weight:600}
+.node .nh i{width:9px;height:9px;border-radius:50%;background:var(--c,var(--faint));flex:none;opacity:.45}
+.node .ns{font-size:12px;color:var(--muted);margin-top:3px;min-height:18px;display:flex;justify-content:space-between;gap:8px}
+.node .ns .t{font-family:var(--mono);flex:none}
+.node .nm{font:11px var(--mono);color:var(--faint);margin-top:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.node .nmcp{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.mc{font-size:11px;padding:2px 7px;border-radius:7px;border:1px dashed var(--border-2);color:var(--faint);display:inline-flex;gap:5px;align-items:center;transition:all .2s}
+.mc.conn{border-style:solid;color:var(--muted)}
+.mc.act{border-style:solid;border-color:var(--c,var(--accent));color:var(--text);background:color-mix(in srgb,var(--c,var(--accent)) 13%,transparent)}
+.mc b{font-weight:600;color:var(--muted)}
+.node.agent{cursor:pointer}
+.node.agent:hover{border-color:var(--border-2)}
+.node.picked{outline:2px solid color-mix(in srgb,var(--c,var(--accent)) 55%,transparent);outline-offset:2px}
+.node.active{border-color:var(--c,var(--accent));background:color-mix(in srgb,var(--c,var(--accent)) 5%,var(--surface));
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--c,var(--accent)) 14%,transparent)}
+.node.active .nh i{opacity:1;animation:pulse 1.1s ease-in-out infinite}
+.node.done{border-color:color-mix(in srgb,var(--ok) 45%,var(--border))}
+.node.done .nh i{background:var(--ok);opacity:1}
+.node.error{border-color:var(--err);background:var(--err-soft)} .node.error .nh i{background:var(--err);opacity:1}
+.node.skipped{opacity:.45}
+.node.offline .nh i{background:var(--err);opacity:.8}
+.edge{flex:0 0 34px;align-self:center;height:2px;position:relative;background:var(--border);border-radius:2px;margin:0 -1px;z-index:0}
+.edge.lit{background:var(--accent)}
+.edge.flow-on{background:repeating-linear-gradient(90deg,var(--accent) 0 6px,transparent 6px 12px);background-size:12px 2px;animation:dash .6s linear infinite}
+.banner{margin-top:12px;padding:10px 12px;border-radius:10px;background:var(--err-soft);color:var(--err);border:1px solid color-mix(in srgb,var(--err) 30%,transparent);font-weight:500}
+
+/* ---------- grid: trace + inspector ---------- */
+.grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(340px,1fr);gap:16px;align-items:start}
+.trace,.inspector{display:flex;flex-direction:column;min-height:300px}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.panel-head h3{margin:0;font-size:13.5px;font-weight:650;letter-spacing:-.005em}
+.counts{font-size:12px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap}
+.rows{overflow:auto;max-height:640px}
+.empty-state{padding:44px 20px;text-align:center;color:var(--muted)}
+.empty-state b{display:block;color:var(--text);margin-bottom:4px;font-weight:600}
+.row{display:grid;grid-template-columns:50px 8px 42px minmax(0,1fr) 64px 92px;gap:10px;align-items:center;padding:8px 14px;border-bottom:1px solid var(--border);
+  cursor:pointer;position:relative;transition:background .12s}
+.row:hover{background:var(--surface-2)}
+.row.sel{background:var(--accent-soft)}
+.row.sel::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent)}
+.row .rt{font:11.5px var(--mono);color:var(--faint)}
+.row .dot{background:var(--c,var(--faint))}
+.row .bdg{font:600 10px var(--sans);letter-spacing:.04em;padding:2px 0;text-align:center;border-radius:6px;background:var(--surface-2);color:var(--muted)}
+.k-llm .bdg{background:color-mix(in srgb,var(--accent) 13%,transparent);color:var(--accent)}
+.k-mcp .bdg,.k-connect .bdg{background:color-mix(in srgb,var(--c-researcher) 14%,transparent);color:var(--c-researcher)}
+.k-a2a .bdg{background:color-mix(in srgb,var(--c-analyst) 15%,transparent);color:var(--c-analyst)}
+.k-route .bdg,.k-check .bdg{background:var(--surface-2);color:var(--muted)}
+.k-error .bdg{background:var(--err-soft);color:var(--err)}
+.rmain{min-width:0;display:flex;flex-direction:column}
+.rtitle{font-weight:550;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rsub{font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rdur{font:12px var(--mono);text-align:right;color:var(--muted)}
+.row.s-running .rdur{color:var(--accent)}
+.wf{height:6px;background:var(--surface-2);border-radius:4px;position:relative;overflow:hidden}
+.wf i{position:absolute;top:0;bottom:0;border-radius:4px;background:var(--c,var(--accent));opacity:.85;min-width:2px}
+.row.s-running .wf i{animation:shimmer 1.2s ease-in-out infinite}
+.row.s-error{background:var(--err-soft)} .row.s-error .rtitle{color:var(--err)}
+.row.s-error .wf i{background:var(--err)}
+.row.s-warn .rtitle{color:var(--warn)} .row.s-warn .wf i{background:var(--warn)}
+.row.s-handled .wf i{background:var(--warn)}
+.row.s-error.sel,.row.s-warn.sel{background:var(--accent-soft)}
+.row.k-agent{background:var(--surface-2);cursor:pointer;padding-top:9px;padding-bottom:9px}
+.row.k-agent .rtitle{font-weight:650;color:var(--c)}
+.row.k-agent .bdg{background:transparent;color:var(--c);font-size:9.5px}
+.tag{font-size:10.5px;font-weight:600;padding:1px 6px;border-radius:6px;margin-left:6px;vertical-align:1px}
+.tag.warn{background:var(--warn-soft);color:var(--warn)} .tag.err{background:var(--err-soft);color:var(--err)} .tag.ok{background:var(--ok-soft);color:var(--ok)}
+
+/* ---------- inspector ---------- */
+.tabs{display:flex;gap:2px;padding:8px 10px 0;border-bottom:1px solid var(--border)}
+.tabs button{border:0;background:transparent;padding:7px 12px 9px;color:var(--muted);font-weight:550;border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs button.on{color:var(--text);border-color:var(--accent)}
+.ibody{padding:16px;overflow:auto;max-height:640px;display:flex;flex-direction:column;gap:14px}
+.pill{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:13px;padding:4px 11px;border-radius:999px;background:var(--surface-2);width:fit-content}
+.pill.ok{background:var(--ok-soft);color:var(--ok)} .pill.failed{background:var(--err-soft);color:var(--err)} .pill.running{background:var(--accent-soft);color:var(--accent)} .pill.cancelled{background:var(--warn-soft);color:var(--warn)}
+.sec h4{margin:0 0 7px;font-size:11.5px;font-weight:650;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;display:flex;justify-content:space-between;align-items:center}
+.answer{white-space:pre-wrap;word-break:break-word;background:var(--surface-2);border-radius:10px;padding:12px;font-size:13.5px;max-height:240px;overflow:auto}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:5px 14px;font-size:13px}
+.facts dt{color:var(--muted)} .facts dd{margin:0;word-break:break-word}
+pre{margin:0;background:var(--surface-2);border-radius:9px;padding:10px 12px;font:12px/1.55 var(--mono);white-space:pre-wrap;word-break:break-word;max-height:260px;overflow:auto}
+details{border:1px solid var(--border);border-radius:10px;overflow:hidden}
+details>summary{cursor:pointer;padding:8px 12px;font-weight:550;font-size:13px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:8px}
+details>summary::-webkit-details-marker{display:none}
+details>summary::after{content:"\25B8";color:var(--faint);transition:transform .15s}
+details[open]>summary::after{transform:rotate(90deg)}
+details>.dbody{padding:0 10px 10px;display:flex;flex-direction:column;gap:8px}
+.copy{font-size:11px;border:1px solid var(--border);background:var(--surface);border-radius:6px;padding:1px 7px;color:var(--muted)}
+.copy:hover{color:var(--text)}
+.msg{display:flex;flex-direction:column;gap:5px}
+.role{font:600 10px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.bar{display:flex;height:10px;border-radius:6px;overflow:hidden;background:var(--surface-2);gap:2px}
+.bar i{display:block;min-width:3px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:12px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px} .legend i{width:8px;height:8px;border-radius:2px;display:inline-block}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.stat{background:var(--surface-2);border-radius:10px;padding:9px 10px}
+.stat b{display:block;font-size:17px;font-weight:650;letter-spacing:-.01em} .stat span{font-size:11.5px;color:var(--muted)}
+.perAgent{display:flex;flex-direction:column;gap:6px}
+.perAgent div{display:grid;grid-template-columns:90px 1fr 60px;gap:10px;align-items:center;font-size:13px}
+.perAgent .track{height:6px;background:var(--surface-2);border-radius:4px;overflow:hidden} .perAgent .track i{display:block;height:100%;background:var(--c);border-radius:4px}
+.perAgent .v{font:12px var(--mono);text-align:right;color:var(--muted)}
+.md{font-size:13.5px;line-height:1.6} .md h1,.md h2,.md h3{margin:12px 0 4px;font-size:14.5px;letter-spacing:-.01em} .md h1{font-size:16px}
+.md ul{margin:4px 0;padding-left:20px} .md p{margin:6px 0} .md a{color:var(--accent)} .md code{font:12px var(--mono);background:var(--surface-2);padding:1px 5px;border-radius:5px}
+.agentcard{border:1px solid var(--border);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.agentcard .hd{display:flex;align-items:center;gap:8px;font-weight:650}
+.servers{display:flex;flex-direction:column;gap:5px}
+.servers div{display:flex;gap:8px;align-items:baseline;font-size:12.5px} .servers b{font-weight:600;min-width:88px}
+.note{font-size:12px;color:var(--muted)}
+
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.35);opacity:.55}}
+@keyframes dash{to{background-position:12px 0}}
+@keyframes shimmer{0%,100%{opacity:.5}50%{opacity:1}}
+@media (max-width:980px){.grid{grid-template-columns:1fr}.top,main{padding-left:16px;padding-right:16px}.stats{grid-template-columns:repeat(2,1fr)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="5" cy="12" r="2.4"/><circle cx="19" cy="5.5" r="2.4"/><circle cx="19" cy="18.5" r="2.4"/><path d="M7.2 11l9.6-4.5M7.2 13l9.6 4.5"/></svg>
+    <span>Agent Pipeline</span><small>Google ADK · A2A · MCP · local models</small>
+  </div>
+  <div class="top-right">
+    <span class="chip" id="chipOllama"><i class="dot"></i>Ollama</span>
+    <span class="chip" id="chipAgents"><i class="dot"></i>Agents</span>
+    <button class="btn ghost" id="warmBtn" title="Load all three models into memory before the demo">Warm up models</button>
+    <button class="btn ghost" id="histBtn">History</button>
+    <button class="icon-btn" id="themeBtn" title="Toggle light / dark">&#9680;</button>
+    <div class="pop" id="histPop" hidden></div>
+  </div>
+</header>
+
+<main>
+  <section class="card composer">
+    <div class="input-row">
+      <textarea id="prompt" rows="1" placeholder="Give the agents a topic to research, analyse and write up&hellip;" autofocus></textarea>
+      <div class="composer-actions">
+        <div class="seg" id="modeSeg" title="Pipeline: researcher, analyst, writer in order. Router: an LLM picks one agent.">
+          <button data-mode="pipeline" class="on">Pipeline</button><button data-mode="router">Router</button>
+        </div>
+        <button class="btn danger" id="stopBtn" hidden>Stop</button>
+        <button class="btn primary" id="runBtn">Run<kbd>&#8629;</kbd></button>
+      </div>
+    </div>
+    <div class="examples" id="examples"></div>
+  </section>
+
+  <section class="card flow">
+    <div class="flow-head">
+      <div class="narr" id="narr"><span class="pulse"></span><span id="narrText">Ready. Write a prompt and press Run.</span></div>
+      <div class="clock" id="clock">00:00.0</div>
+    </div>
+    <div class="nodes" id="nodes"></div>
+    <div class="banner" id="banner" hidden></div>
+  </section>
+
+  <section class="grid">
+    <div class="card trace">
+      <div class="panel-head">
+        <h3>Trace</h3>
+        <div class="seg" id="filterSeg">
+          <button data-f="all" class="on">All</button><button data-f="llm">LLM</button><button data-f="mcp">MCP</button><button data-f="a2a">A2A</button><button data-f="err">Issues</button>
+        </div>
+        <div class="counts" id="counts"></div>
+      </div>
+      <div class="rows" id="rows"></div>
+      <div class="empty-state" id="traceEmpty"><b>Nothing yet</b>Every LLM call, MCP tool call and A2A hop will appear here, live.</div>
+    </div>
+    <aside class="card inspector">
+      <div class="tabs" id="tabs"><button data-t="result" class="on">Result</button><button data-t="step">Step</button><button data-t="agents">Agents</button></div>
+      <div class="ibody" id="ibody"></div>
+    </aside>
+  </section>
+</main>
+
+<script>
+"use strict";
+/* ================================================================ helpers */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const fmtMs = ms => {
+  if (ms == null) return "\u2026";
+  if (ms < 1000) return Math.round(ms) + " ms";
+  const s = ms / 1000;
+  if (s < 60) return s.toFixed(s < 10 ? 2 : 1) + " s";
+  return Math.floor(s / 60) + "m " + String(Math.round(s % 60)).padStart(2, "0") + "s";
+};
+const fmtClock = ms => { const s = ms / 1000; return String(Math.floor(s / 60)).padStart(2, "0") + ":" + (s % 60).toFixed(1).padStart(4, "0"); };
+const fmtOff = ms => "+" + (ms / 1000).toFixed(1) + "s";
+const clip = (s, n) => { s = String(s ?? ""); return s.length > n ? s.slice(0, n - 1) + "\u2026" : s; };
+const pretty = o => { try { return JSON.stringify(o, null, 2); } catch { return String(o); } };
+const shortModel = m => String(m || "").replace(/^hf\.co\//, "").replace(/-GGUF/i, "").replace(/:.*$/, "").split("/").pop();
+const argPreview = a => clip(Object.entries(a || {}).map(([k, v]) => k + "=" + (typeof v === "string" ? '"' + clip(v, 36) + '"' : clip(JSON.stringify(v), 24))).join(", "), 80);
+const mcpTitle = (server, tool) => server === tool ? tool : server + " \u00b7 " + tool;
+const prettyName = n => String(n || "").replace(/_agent$/, "").replace(/^./, c => c.toUpperCase());
+
+const EXAMPLES = ["Solar energy in Pakistan", "Electric vehicles in Pakistan", "How do vaccines work", "Remote work trends"];
+const AGENT_ORDER = ["researcher_agent", "analyst_agent", "writer_agent"];
+
+/* ================================================================ state */
+let info = { agents: [], ollama: { up: false, loaded: [] } };   // from /api/status
+const agentInfo = n => info.agents.find(a => a.name === n);
+const label = n => agentInfo(n)?.label || (n === "orchestrator" ? "Orchestrator" : prettyName(n));
+
+function freshState() {
+  return {
+    runId: null, prompt: "", mode: "pipeline", running: false, status: null, ms: 0, startWall: 0, replay: false,
+    events: [], lastI: -1, spans: [], byId: new Map(), selected: null, picked: null, filter: "all",
+    stage: {}, mcp: {}, result: null, report: null, error: null, lastT: 0, lastWall: 0, route: null,
+  };
+}
+let S = freshState();
+let mode = "pipeline", tab = "result", es = null, rowEls = new Map(), nodesSig = "";
+
+/* ================================================================ event -> spans */
+function span(id, kind, agent, t, fields = {}) {
+  let sp = S.byId.get(id);
+  if (!sp) {
+    sp = { id, kind, agent, t, ms: null, status: "running", title: "", sub: "", data: {}, wall: Date.now() };
+    S.byId.set(id, sp); S.spans.push(sp);
+  }
+  Object.assign(sp, fields);
+  return sp;
+}
+function close(sp, ms, status = "ok") { sp.ms = ms; sp.status = status; sp.endT = sp.t + (ms || 0); }
+function mcpState(agent, server) { return (S.mcp[agent + "|" + server] ||= { connected: false, active: 0, calls: 0, tools: [] }); }
+
+function apply(ev) {
+  if (ev.i != null) { if (ev.i <= S.lastI) return; S.lastI = ev.i; }
+  S.events.push(ev); S.lastT = ev.t; S.lastWall = Date.now();
+  const a = ev.agent;
+  switch (ev.type) {
+    case "run.start": break;
+    case "preflight": {
+      const sp = span("preflight", "check", "orchestrator", ev.t, { title: "Pre-flight checks" });
+      sp.data.items = (sp.data.items || []).concat(ev);
+      const n = sp.data.items.length;
+      sp.sub = n + " checks passed (Ollama + agent cards)"; close(sp, ev.t - sp.t + (ev.ms || 0), "ok"); break;
+    }
+    case "a2a.discover": {
+      const sp = span("disc-" + ev.i, "a2a", a, ev.t, { title: "Discover " + label(a), sub: "GET agent card \u00b7 HTTP " + ev.status });
+      sp.data.discover = ev; close(sp, ev.ms, ev.status === 200 ? "ok" : "error"); break;
+    }
+    case "a2a.request": {
+      const sp = span(ev.sid, "a2a", a, ev.t, { title: "A2A \u2192 " + label(a), sub: "JSON-RPC \u00b7 " + (ev.payload?.method || "message") + " \u00b7 " + ev.bytes + " B" });
+      sp.data.request = ev; sp.data.states = []; break;
+    }
+    case "a2a.accepted": { const sp = S.byId.get(ev.sid); if (sp) { sp.data.accepted = ev; } break; }
+    case "a2a.state": { const sp = S.byId.get(ev.sid); if (sp) { sp.data.states.push({ state: ev.state, t: ev.t }); sp.sub = "task state: " + ev.state; } break; }
+    case "a2a.response": {
+      const sp = S.byId.get(ev.sid) || span(ev.sid || "hop-" + ev.i, "a2a", a, ev.t - (ev.ms || 0), { title: "A2A \u2192 " + label(a) });
+      sp.data.response = ev;
+      sp.sub = ev.events + " events streamed back \u00b7 task completed";
+      close(sp, ev.ms, sp.status === "error" ? "error" : "ok"); break;
+    }
+    case "agent.start": {
+      S.stage[a] = { status: "active", t: ev.t, wall: Date.now(), model: ev.model };
+      const sp = span(ev.sid, "agent", a, ev.t, { title: label(a) + " agent", sub: shortModel(ev.model) + " \u00b7 working on the task" });
+      sp.data.start = ev; break;
+    }
+    case "agent.end": {
+      const sp = S.byId.get(ev.sid); if (sp) { close(sp, ev.ms); sp.data.end = ev; sp.sub = shortModel(S.stage[a]?.model) + " \u00b7 task complete"; }
+      (S.stage[a] ||= {}).status = "done"; S.stage[a].ms = ev.ms; break;
+    }
+    case "mcp.connect": {
+      const m = mcpState(a, ev.server); m.connected = true; m.tools = ev.tools || [];
+      const sp = span("conn-" + ev.i, "connect", a, ev.t, { title: "MCP connect \u00b7 " + ev.server, sub: (ev.tools || []).length + " tool(s): " + (ev.tools || []).join(", ") });
+      sp.data.ev = ev; close(sp, ev.ms); break;
+    }
+    case "mcp.error": {
+      const sp = span("mcperr-" + ev.i, "error", a, ev.t, { title: "MCP connect failed \u00b7 " + ev.server, sub: clip(ev.error, 90) });
+      sp.data.ev = ev; close(sp, ev.ms, "error"); fail(a, ev.error); break;
+    }
+    case "llm.start": {
+      const sp = span(ev.sid, "llm", a, ev.t, { title: shortModel(ev.model) + " \u00b7 thinking", sub: "prompt " + ev.prompt_chars + " chars \u00b7 " + (ev.tools || []).length + " tools offered" });
+      sp.data.start = ev; break;
+    }
+    case "llm.end": {
+      const sp = S.byId.get(ev.sid) || span(ev.sid, "llm", a, ev.t - ev.ms, {});
+      sp.data.end = ev;
+      const call = ev.calls && ev.calls[0];
+      sp.title = "LLM \u2192 " + (call ? "call " + call.name : "final answer");
+      sp.sub = [(ev.tokens_in != null ? ev.tokens_in + "\u2192" + ev.tokens_out + " tok" : null), (ev.tok_per_s ? ev.tok_per_s + " tok/s" : null)].filter(Boolean).join(" \u00b7 ") || clip(ev.text, 70);
+      close(sp, ev.ms, ev.ok === false ? "error" : "ok"); break;
+    }
+    case "llm.error": {
+      const sp = S.byId.get(ev.sid) || span(ev.sid || "llmerr-" + ev.i, "llm", a, ev.t, {});
+      sp.data.error = ev; sp.title = "LLM call failed"; sp.sub = clip(ev.error, 90); close(sp, ev.ms, "error"); break;
+    }
+    case "tool.start": {
+      const m = mcpState(a, ev.server); m.active++; m.connected = true;
+      const sp = span(ev.sid, "mcp", a, ev.t, { title: mcpTitle(ev.server, ev.tool), sub: argPreview(ev.args) });
+      sp.data.start = ev; break;
+    }
+    case "tool.end": {
+      const m = mcpState(a, ev.server); m.active = Math.max(0, m.active - 1); m.calls++;
+      const sp = S.byId.get(ev.sid) || span(ev.sid, "mcp", a, ev.t - ev.ms, { title: mcpTitle(ev.server, ev.tool) });
+      sp.data.end = ev;
+      const status = !ev.ok ? "error" : ev.warn ? "warn" : "ok";
+      sp.sub = (status === "ok" ? "" : (status === "warn" ? "no usable data \u00b7 " : "failed \u00b7 ")) + clip((ev.result || "").replace(/\s+/g, " "), 80);
+      close(sp, ev.ms, status); break;
+    }
+    case "tool.error": {
+      const m = mcpState(a, ev.server); m.active = Math.max(0, m.active - 1); m.calls++;
+      const sp = S.byId.get(ev.sid) || span(ev.sid || "toolerr-" + ev.i, "mcp", a, ev.t - (ev.ms || 0), { title: mcpTitle(ev.server, ev.tool) });
+      sp.data.error = ev; sp.sub = "error caught \u00b7 " + clip(ev.error, 70); close(sp, ev.ms, "handled"); break;
+    }
+    case "route": {
+      S.route = ev.target;
+      const sp = span("route-" + ev.i, "route", a, ev.t, { title: "Router \u2192 " + label(ev.target), sub: "the LLM chose this agent" });
+      sp.data.ev = ev; close(sp, 0); break;
+    }
+    case "error": {
+      const sp = span("err-" + ev.i, "error", a, ev.t, { title: ev.message ? clip(ev.message, 90) : "Error", sub: ev.handled ? "handled \u00b7 " + (ev.where || "") : (ev.where || "") });
+      sp.data.ev = ev; close(sp, 0, ev.handled ? "handled" : "error");
+      if (!ev.handled || ev.where === "preflight") fail(a, ev.message); break;
+    }
+    case "run.end": {
+      S.running = false; S.status = ev.status; S.ms = ev.ms; S.report = ev.report; S.result = ev.result ? { text: ev.result, agent: ev.result_agent } : null;
+      for (const sp of S.spans) if (sp.status === "running") close(sp, ev.ms - sp.t, ev.status === "ok" ? "ok" : "error");
+      for (const k of Object.keys(S.stage)) if (S.stage[k].status === "active") S.stage[k].status = ev.status === "ok" ? "done" : "error";
+      for (const m of Object.values(S.mcp)) m.active = 0;
+      if (ev.status === "failed" && !S.error) S.error = { agent: null, message: ev.error || "Run failed" };
+      break;
+    }
+  }
+}
+function fail(agent, message) {
+  if (S.error) return;
+  S.error = { agent, message };
+  if (agent && agent !== "orchestrator") (S.stage[agent] ||= {}).status = "error";
+}
+
+/* ================================================================ rendering: flow map */
+function buildNodes() {
+  const el = $("#nodes"); el.innerHTML = "";
+  const add = (html, cls, attrs = "") => el.insertAdjacentHTML("beforeend", `<div class="node ${cls}" ${attrs}>${html}</div>`);
+  const edge = () => el.insertAdjacentHTML("beforeend", '<div class="edge"></div>');
+  add('<div class="nh"><i></i>You</div><div class="ns"><span id="n-you-s">prompt</span></div>', "slim", 'id="n-you" data-agent="orchestrator"'); edge();
+  add('<div class="nh"><i></i><span id="n-orch-l">Orchestrator</span></div><div class="ns"><span id="n-orch-s">idle</span><span class="t" id="n-orch-t"></span></div><div class="nm" id="n-orch-m">ADK \u00b7 A2A client</div>', "", 'id="n-orch" data-agent="orchestrator"');
+  const agents = info.agents.length ? info.agents : AGENT_ORDER.map(n => ({ name: n, label: prettyName(n), servers: [], model: "" }));
+  for (const ag of agents) {
+    edge();
+    add(`<div class="nh"><i></i>${esc(ag.label)}</div><div class="ns"><span id="n-${ag.name}-s">idle</span><span class="t" id="n-${ag.name}-t"></span></div>
+      <div class="nm" title="${esc(ag.model)}">${esc(shortModel(ag.model))}</div>
+      <div class="nmcp">${(ag.servers || []).map(s => `<span class="mc" id="mc-${ag.name}-${s.name}" title="${esc(s.desc)}">${esc(s.name)}<b></b></span>`).join("")}</div>`,
+      "agent", `id="n-${ag.name}" data-agent="${ag.name}"`);
+  }
+  edge(); add('<div class="nh"><i></i>Output</div><div class="ns"><span id="n-out-s">\u2014</span></div>', "slim", 'id="n-out" data-agent="orchestrator"');
+}
+
+function activityOf(agent) {
+  const running = S.spans.filter(s => s.agent === agent && s.status === "running");
+  const inner = [...running].reverse().find(s => s.kind === "mcp" || s.kind === "llm");
+  if (!inner) return running.length ? "working" : "waiting";
+  return inner.kind === "llm" ? "thinking\u2026" : "MCP \u00b7 " + inner.data.start.tool;
+}
+
+function renderFlow() {
+  const names = (info.agents.length ? info.agents.map(a => a.name) : AGENT_ORDER);
+  const now = Date.now();
+  const runningNow = S.running;
+  $("#n-you-s").textContent = S.prompt ? clip(S.prompt, 16) : "prompt";
+  $("#n-you").className = "node slim" + (S.runId ? " done" : "");
+  const orch = $("#n-orch");
+  $("#n-orch-l").textContent = S.mode === "router" ? "Router" : "Orchestrator";
+  $("#n-orch-m").textContent = S.mode === "router" ? "LLM picks one agent" : "Sequential pipeline";
+  orch.className = "node" + (runningNow ? " active" : S.status === "ok" ? " done" : S.status === "failed" ? "" : "");
+  $("#n-orch-s").textContent = runningNow ? "coordinating" : S.status ? ({ ok: "done", failed: "stopped", cancelled: "cancelled" }[S.status]) : "idle";
+  $("#n-orch-t").textContent = S.status ? fmtMs(S.ms) : "";
+  const edges = $$(".edge", $("#nodes"));
+  let statuses = [];
+  for (const n of names) {
+    const st = S.stage[n]?.status || "idle";
+    const skipped = S.runId && !runningNow && st === "idle" && S.status !== "ok" && !(S.mode === "router" && n !== S.route && S.status === "ok");
+    const el = $("#n-" + n); if (!el) continue;
+    const off = agentInfo(n) && !agentInfo(n).online;
+    el.className = "node agent " + (st === "active" ? "active" : st === "done" ? "done" : st === "error" ? "error" : skipped ? "skipped" : "") +
+      (off && !S.runId ? " offline" : "") + (S.picked === n ? " picked" : "");
+    el.dataset.agent = n;
+    let txt = { idle: off ? "offline" : "idle", active: activityOf(n), done: "done", error: "failed" }[st];
+    if (skipped) txt = "not run";
+    if (S.mode === "router" && st === "idle" && S.status === "ok") txt = "not chosen";
+    $("#n-" + n + "-s").textContent = txt;
+    const stg = S.stage[n];
+    $("#n-" + n + "-t").textContent = st === "active" && stg?.wall ? fmtMs(now - stg.wall) : stg?.ms != null ? fmtMs(stg.ms) : "";
+    statuses.push(st);
+    for (const sv of (agentInfo(n)?.servers || [])) {
+      const m = S.mcp[n + "|" + sv.name], chip = $(`#mc-${n}-${sv.name}`); if (!chip) continue;
+      chip.className = "mc" + (m?.active ? " act" : m?.connected ? " conn" : "");
+      chip.style.setProperty("--c", `var(--c-${n.replace("_agent", "")})`);
+      chip.querySelector("b").textContent = m?.calls ? "\u00d7" + m.calls : "";
+    }
+  }
+  // edges: lit once the destination started, flowing while it is active
+  const dest = ["__orch", ...names, "__out"];
+  edges.forEach((e, i) => {
+    const d = dest[i];
+    let lit = false, flowing = false;
+    if (i === 0) { lit = !!S.runId; flowing = runningNow && !Object.keys(S.stage).length; }
+    else if (d === "__out") { lit = S.status === "ok"; }
+    else { const st = S.stage[d]?.status; lit = !!st; flowing = st === "active"; }
+    e.className = "edge" + (lit ? " lit" : "") + (flowing ? " flow-on" : "");
+  });
+  $("#n-out-s").textContent = S.status === "ok" ? (S.report ? "report saved" : "answer ready") : S.status === "failed" ? "none" : "\u2014";
+  $("#n-out").className = "node slim" + (S.status === "ok" ? " done" : "");
+  // narration + clock
+  const narr = $("#narr"); narr.className = "narr " + (runningNow ? "running" : (S.status || ""));
+  $("#narrText").textContent = narrate();
+  const banner = $("#banner");
+  if (S.status === "failed" && S.error) { banner.hidden = false; banner.textContent = (S.error.agent && S.error.agent !== "orchestrator" ? label(S.error.agent) + ": " : "") + clip(S.error.message, 260); }
+  else banner.hidden = true;
+}
+
+function narrate() {
+  if (!S.runId) return "Ready. Write a prompt and press Run.";
+  if (S.status === "ok") return "Completed in " + fmtMs(S.ms) + " \u00b7 " + S.spans.filter(s => s.kind === "llm").length + " LLM calls, " + S.spans.filter(s => s.kind === "mcp").length + " MCP calls";
+  if (S.status === "failed") return "Stopped" + (S.error?.agent && S.error.agent !== "orchestrator" ? " at " + label(S.error.agent) : "") + " after " + fmtMs(S.ms);
+  if (S.status === "cancelled") return "Cancelled after " + fmtMs(S.ms);
+  const run = [...S.spans].reverse().filter(s => s.status === "running");
+  const inner = run.find(s => s.kind === "mcp" || s.kind === "llm" || s.kind === "connect");
+  if (inner) {
+    if (inner.kind === "llm") return label(inner.agent) + " is thinking (" + shortModel(inner.data.start.model) + ")";
+    if (inner.kind === "mcp") return label(inner.agent) + " is calling " + inner.data.start.tool + " on MCP \u00b7 " + inner.data.start.server;
+  }
+  const hop = run.find(s => s.kind === "a2a");
+  if (hop) return "Waiting for " + label(hop.agent) + " over A2A\u2026";
+  return "Starting\u2026";
+}
+
+/* ================================================================ rendering: trace */
+const KIND_BADGE = { llm: "LLM", mcp: "MCP", connect: "MCP", a2a: "A2A", agent: "AGENT", route: "ROUTE", check: "CHECK", error: "ERR" };
+function passes(sp) {
+  if (S.picked && sp.agent !== S.picked && !(sp.kind === "a2a" && sp.agent === S.picked)) return false;
+  const f = S.filter;
+  if (f === "all") return true;
+  if (f === "llm") return sp.kind === "llm" || sp.kind === "agent";
+  if (f === "mcp") return sp.kind === "mcp" || sp.kind === "connect" || sp.kind === "agent";
+  if (f === "a2a") return sp.kind === "a2a" || sp.kind === "route" || sp.kind === "check" || sp.kind === "agent";
+  if (f === "err") return ["error", "warn", "handled"].includes(sp.status) || sp.kind === "error";
+  return true;
+}
+function rowHTML(sp) {
+  const tag = sp.status === "warn" ? '<span class="tag warn">no data</span>' : sp.status === "handled" ? '<span class="tag warn">handled</span>' :
+    sp.status === "error" ? '<span class="tag err">failed</span>' : "";
+  return `<span class="rt">${fmtOff(sp.t)}</span><i class="dot"></i><span class="bdg">${KIND_BADGE[sp.kind] || ""}</span>
+    <span class="rmain"><span class="rtitle">${esc(sp.title)}${tag}</span><span class="rsub">${esc(sp.sub)}</span></span>
+    <span class="rdur">${sp.status === "running" ? fmtMs(Date.now() - sp.wall) : fmtMs(sp.ms)}</span><span class="wf"><i></i></span>`;
+}
+function renderTrace() {
+  const box = $("#rows");
+  $("#traceEmpty").hidden = S.spans.length > 0;
+  const stick = box.scrollTop + box.clientHeight >= box.scrollHeight - 40;
+  let added = false;
+  for (const sp of S.spans) {
+    let el = rowEls.get(sp.id);
+    if (!el) {
+      el = document.createElement("div"); el.dataset.id = sp.id; rowEls.set(sp.id, el); box.appendChild(el); added = true;
+    }
+    el.className = `row k-${sp.kind} s-${sp.status}` + (S.selected === sp.id ? " sel" : "");
+    el.dataset.agent = sp.agent;
+    el.innerHTML = rowHTML(sp);
+    el.hidden = !passes(sp);
+  }
+  layoutBars();
+  if (added && stick && S.running) box.scrollTop = box.scrollHeight;
+  const c = { llm: 0, mcp: 0, a2a: 0, err: 0 }, tok = [0, 0];
+  for (const sp of S.spans) {
+    if (sp.kind === "llm") { c.llm++; tok[0] += sp.data.end?.tokens_in || 0; tok[1] += sp.data.end?.tokens_out || 0; }
+    else if (sp.kind === "mcp") c.mcp++; else if (sp.kind === "a2a" && sp.data.request) c.a2a++;
+    if (["error", "warn", "handled"].includes(sp.status)) c.err++;
+  }
+  $("#counts").innerHTML = `<span>${c.llm} LLM</span><span>${c.mcp} MCP</span><span>${c.a2a} A2A</span>` +
+    (tok[1] ? `<span>${(tok[0] + tok[1]).toLocaleString()} tok</span>` : "") + (c.err ? `<span style="color:var(--err)">${c.err} issue${c.err > 1 ? "s" : ""}</span>` : "");
+}
+function totalSpan() { return Math.max(1000, S.running ? S.lastT + (Date.now() - S.lastWall) : (S.ms || S.lastT)); }
+function layoutBars() {
+  const T = totalSpan();
+  for (const sp of S.spans) {
+    const el = rowEls.get(sp.id); if (!el) continue;
+    const bar = el.querySelector(".wf i"); if (!bar) continue;
+    const dur = sp.status === "running" ? S.lastT + (Date.now() - S.lastWall) - sp.t : (sp.ms || 0);
+    bar.style.left = Math.min(98, (sp.t / T) * 100) + "%";
+    bar.style.width = Math.max(1.2, Math.min(100 - (sp.t / T) * 100, (Math.max(dur, 0) / T) * 100)) + "%";
+    if (sp.kind === "agent") bar.style.opacity = ".35";
+  }
+}
+
+/* ================================================================ rendering: inspector */
+const facts = rows => `<dl class="facts">${rows.filter(r => r[1] != null && r[1] !== "").map(r => `<dt>${esc(r[0])}</dt><dd>${r[1]}</dd>`).join("")}</dl>`;
+const pre = (text, label2) => `<div class="sec">${label2 ? `<h4>${esc(label2)}<button class="copy" data-copy>Copy</button></h4>` : ""}<pre>${esc(text)}</pre></div>`;
+const det = (title, body, open = false) => `<details ${open ? "open" : ""}><summary>${esc(title)}</summary><div class="dbody">${body}</div></details>`;
+const statusPill = sp => ({ ok: '<span class="tag ok">ok</span>', warn: '<span class="tag warn">no usable data</span>', error: '<span class="tag err">failed</span>', handled: '<span class="tag warn">error handled</span>', running: '<span class="tag ok">running</span>' }[sp.status] || "");
+
+function renderStep() {
+  const sp = S.byId.get(S.selected);
+  if (!sp) return `<div class="empty-state"><b>Select a step</b>Click any row in the trace to see the exact prompt, arguments, result, timings and how errors were handled.</div>`;
+  const head = `<div class="sec"><h4>${esc(KIND_BADGE[sp.kind])} &middot; ${esc(label(sp.agent))}</h4><div style="font-weight:650;font-size:15px">${esc(sp.title)} ${statusPill(sp)}</div></div>`;
+  const common = [["Started", fmtOff(sp.t) + " after you pressed Run"], ["Duration", sp.status === "running" ? "running\u2026" : fmtMs(sp.ms)]];
+  let body = "";
+  const d = sp.data;
+  if (sp.kind === "llm") {
+    const s = d.start || {}, e = d.end || {}, er = d.error;
+    body = facts([...common, ["Model", `<span class="mono">${esc(s.model)}</span> via Ollama`], ["Tokens", e.tokens_in != null ? `${e.tokens_in} in \u2192 ${e.tokens_out} out` : null],
+      ["Speed", e.tok_per_s ? e.tok_per_s + " tokens/s" : null], ["Settings", `temperature ${s.temperature ?? "default"} \u00b7 max ${s.max_tokens ?? "default"} tokens`],
+      ["Prompt size", s.prompt_chars ? s.prompt_chars + " characters" : null]]);
+    if (e.calls?.length) body += `<div class="sec"><h4>Decision</h4><pre>${esc(e.calls.map(c => "call " + c.name + "(" + JSON.stringify(c.args) + ")").join("\n"))}</pre></div>`;
+    if (e.text) body += pre(e.text, e.calls?.length ? "Model text" : "Model answer");
+    if (er) body += `<div class="sec"><h4>Error</h4><pre>${esc(er.error)}</pre></div><div class="note">${esc(er.recovery || "")}</div>`;
+    body += det("What the model saw", `${s.system ? `<div class="sec"><h4>System instruction</h4><pre>${esc(s.system)}</pre></div>` : ""}
+      <div class="sec"><h4>Conversation sent</h4>${(s.messages || []).map(m => `<div class="msg"><span class="role">${esc(m.role)}</span>${m.parts.map(p =>
+        p.kind === "text" ? `<pre>${esc(p.text)}</pre>` : p.kind === "call" ? `<pre>\u2192 call ${esc(p.name)}(${esc(JSON.stringify(p.args))})</pre>` : `<pre>\u2190 ${esc(p.name)} returned:\n${esc(p.text)}</pre>`).join("")}</div>`).join("")}</div>
+      <div class="sec"><h4>Tools offered (MCP)</h4><div class="mono" style="font-size:12px">${esc((s.tools || []).join(", ") || "none")}</div></div>`, !e.text && !e.calls?.length);
+  } else if (sp.kind === "mcp") {
+    const s = d.start || {}, e = d.end || d.error || {};
+    body = facts([...common, ["MCP server", `<b>${esc(s.server || e.server)}</b> <span class="muted">(child process, stdio)</span>`], ["Tool", `<span class="mono">${esc(s.tool || e.tool)}</span>`],
+      ["Result size", e.result_chars != null ? e.result_chars + " characters" : null]]);
+    body += pre(pretty(s.args || {}), "Arguments the model sent");
+    if (d.end) body += pre(e.result || "(empty)", "Result returned to the model");
+    if (d.error) body += pre(d.error.error, "Exception");
+    if (e.recovery) body += `<div class="sec"><h4>Error handling</h4><div>${esc(e.recovery)}</div></div>`;
+  } else if (sp.kind === "connect") {
+    const e = d.ev || {};
+    body = facts([...common, ["MCP server", `<b>${esc(e.server)}</b>`], ["Launched with", `<span class="mono">${esc(e.command)}</span>`], ["Tools discovered", `<span class="mono">${esc((e.tools || []).join(", "))}</span>`]]) +
+      `<div class="note">The agent starts each MCP server as a child process and talks to it over stdin/stdout. Startup costs time only on the first connection; later calls reuse the session.</div>`;
+  } else if (sp.kind === "a2a") {
+    const rq = d.request, rs = d.response, dc = d.discover;
+    if (dc) body = facts([...common, ["Request", `GET ${esc(dc.url)}`], ["HTTP status", dc.status]]) + (dc.card ? pre(pretty(dc.card), "Agent card (what the agent advertises)") : "");
+    else body = facts([...common, ["Target", `<b>${esc(label(sp.agent))}</b> <span class="mono muted">${esc(rq?.url || "")}</span>`], ["Protocol", "A2A \u00b7 JSON-RPC over HTTP, streamed"],
+      ["Time to first byte", d.accepted ? fmtMs(d.accepted.ms) : null], ["Events streamed back", rs?.events],
+      ["Task states", (d.states || []).map(s => esc(s.state) + " (" + fmtOff(s.t) + ")").join(" \u2192 ")]]) +
+      (rq ? pre(pretty(rq.payload), "Request sent to the agent") : "") + (rs?.text ? pre(rs.text, "Agent's final reply") : "");
+  } else if (sp.kind === "agent") {
+    const s = d.start || {};
+    body = facts([...common, ["Model", `<span class="mono">${esc(s.model)}</span>`]]) + pre(s.input || "(empty)", "Message this agent received over A2A") +
+      `<div class="note">This is the agent's whole task. Everything between its start and finish rows in the trace belongs to it.</div>`;
+  } else if (sp.kind === "route") {
+    body = facts([...common, ["Chosen agent", `<b>${esc(label(d.ev.target))}</b>`]]) + `<div class="note">In router mode a small LLM reads your request and calls transfer_to_agent. The request is then handled by that agent only.</div>`;
+  } else if (sp.kind === "check") {
+    body = facts(common) + (d.items || []).map(i => `<div class="mono" style="font-size:12px">\u2713 ${esc(i.target)} ${i.port ? ":" + i.port : ""} (${i.ms} ms)</div>`).join("") +
+      `<div class="note">Before anything runs, the UI confirms Ollama and every agent answer. If one does not, the run stops here with a clear message instead of failing half way.</div>`;
+  } else if (sp.kind === "error") {
+    const e = d.ev || {};
+    body = facts([...common, ["Where", e.where], ["Handled", e.handled ? "Yes, the system recovered or stopped cleanly" : "No, the run stopped here"], ["Message", esc(e.message || e.error)]]) +
+      (e.recovery ? `<div class="sec"><h4>What happened next</h4><div>${esc(e.recovery)}</div></div>` : "") + (e.detail ? pre(e.detail, "Details") : "");
+  }
+  return head + body;
+}
+
+function renderResult() {
+  if (!S.runId) return `<div class="empty-state"><b>No run yet</b>The final answer, the saved report and a breakdown of where the time went will appear here.</div>`;
+  const stat = S.running ? "running" : S.status;
+  const pillTxt = S.running ? "Running\u2026" : { ok: "Completed in " + fmtMs(S.ms), failed: "Failed after " + fmtMs(S.ms), cancelled: "Cancelled" }[S.status];
+  let h = `<span class="pill ${stat}">${esc(pillTxt)}</span>`;
+  if (S.status === "failed" && S.error) h += `<div class="sec"><h4>What went wrong</h4><div>${esc(S.error.message)}</div><div class="note" style="margin-top:6px">The pipeline stopped at the failing stage, so later agents were not run on bad input. See the red rows in the trace.</div></div>`;
+  if (S.result?.text) h += `<div class="sec"><h4>${esc(label(S.result.agent))}'s final answer</h4><div class="answer">${esc(S.result.text)}</div></div>`;
+  if (S.report) h += `<div class="sec"><h4>Saved report \u00b7 <span class="mono">${esc(S.report)}</span></h4><div class="md" id="reportBox"><span class="note">Loading\u2026</span></div></div>`;
+  const llm = sum("llm"), tool = sum("mcp"), conn = sum("connect"), total = S.running ? totalSpan() : (S.ms || 1);
+  const other = Math.max(0, total - llm - tool - conn);
+  const seg = (v, c) => v > 0 ? `<i style="width:${(v / total) * 100}%;background:${c}"></i>` : "";
+  h += `<div class="sec"><h4>Where the time went</h4><div class="bar">${seg(llm, "var(--accent)")}${seg(tool, "var(--c-researcher)")}${seg(conn, "var(--c-analyst)")}${seg(other, "var(--border-2)")}</div>
+    <div class="legend"><span><i style="background:var(--accent)"></i>LLM ${fmtMs(llm)} (${pct(llm, total)})</span><span><i style="background:var(--c-researcher)"></i>MCP tools ${fmtMs(tool)}</span>
+    <span><i style="background:var(--c-analyst)"></i>MCP connect ${fmtMs(conn)}</span><span><i style="background:var(--border-2)"></i>A2A / overhead ${fmtMs(other)}</span></div></div>`;
+  const per = AGENT_ORDER.map(n => [n, S.stage[n]?.ms ?? (S.stage[n]?.status === "active" ? Date.now() - S.stage[n].wall : null)]).filter(x => x[1] != null);
+  if (per.length) { const mx = Math.max(...per.map(x => x[1])); h += `<div class="sec"><h4>Time per agent</h4><div class="perAgent">${per.map(([n, ms]) => `<div data-agent="${n}"><span>${esc(label(n))}</span><span class="track"><i style="width:${(ms / mx) * 100}%"></i></span><span class="v">${fmtMs(ms)}</span></div>`).join("")}</div></div>`; }
+  const llms = S.spans.filter(s => s.kind === "llm"), tIn = llms.reduce((a, s) => a + (s.data.end?.tokens_in || 0), 0), tOut = llms.reduce((a, s) => a + (s.data.end?.tokens_out || 0), 0);
+  const issues = S.spans.filter(s => ["error", "warn", "handled"].includes(s.status)).length;
+  h += `<div class="stats"><div class="stat"><b>${llms.length}</b><span>LLM calls</span></div><div class="stat"><b>${S.spans.filter(s => s.kind === "mcp").length}</b><span>MCP calls</span></div>
+    <div class="stat"><b>${(tIn + tOut).toLocaleString()}</b><span>tokens</span></div><div class="stat"><b>${issues}</b><span>issues</span></div></div>`;
+  if (!S.running) h += `<div style="display:flex;gap:8px"><a class="btn" style="text-decoration:none;display:inline-flex;align-items:center" href="/api/runs/${esc(S.runId)}" download="run-${esc(S.runId)}.json">Export trace (JSON)</a></div>`;
+  return h;
+}
+const sum = k => S.spans.filter(s => s.kind === k && s.ms).reduce((a, s) => a + s.ms, 0);
+const pct = (v, t) => Math.round((v / t) * 100) + "%";
+
+function renderAgents() {
+  if (!info.agents.length) return `<div class="empty-state"><b>No agent info</b>Start the agents with python run_all.py.</div>`;
+  return info.agents.map(a => {
+    const card = a.card || {}, skills = (card.skills || []).length;
+    return `<div class="agentcard" data-agent="${a.name}"><div class="hd"><i class="dot ${a.online ? "on" : "off"}"></i>${esc(a.label)} <span class="muted mono" style="font-weight:400;font-size:12px">:${a.port}</span>
+      <span class="chip" style="margin-left:auto">${a.online ? "online" : "offline"}</span></div>
+      ${facts([["Model", `<span class="mono">${esc(shortModel(a.model))}</span> ${a.loaded ? '<span class="tag ok">in memory</span>' : '<span class="tag warn">not loaded</span>'}`],
+        ["A2A card", a.online ? esc(card.description || "") : "unreachable"], ["Protocol", a.online ? `JSON-RPC \u00b7 streaming ${card.capabilities?.streaming ? "on" : "off"} \u00b7 ${skills} skills advertised` : null]])}
+      <div class="servers">${a.servers.map(s => { const m = S.mcp[a.name + "|" + s.name]; return `<div><b>${esc(s.name)}</b><span class="muted">${esc(s.desc)}${m?.tools?.length ? " \u00b7 " + esc(m.tools.join(", ")) : ""}</span></div>`; }).join("")}</div>
+      ${a.card ? det("Agent card JSON", `<pre>${esc(pretty(a.card))}</pre>`) : ""}</div>`;
+  }).join("") + `<div class="note">Each agent is an independent A2A server. The orchestrator discovers it by reading its agent card, then talks to it over HTTP.</div>`;
+}
+
+function renderInspector() {
+  const body = $("#ibody");
+  const keep = body.scrollTop;
+  body.innerHTML = tab === "result" ? renderResult() : tab === "step" ? renderStep() : renderAgents();
+  body.scrollTop = keep;
+  $$("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.t === tab));
+  if (tab === "result" && S.report && !S.running) loadReport();
+}
+let reportCache = {};
+async function loadReport() {
+  const box = $("#reportBox"); if (!box) return;
+  try {
+    if (!reportCache[S.report]) reportCache[S.report] = (await (await fetch("/api/reports/" + encodeURIComponent(S.report))).json()).text;
+    box.innerHTML = md(reportCache[S.report]);
+  } catch { box.innerHTML = '<span class="note">Report file not found.</span>'; }
+}
+function md(src) {
+  const inline = t => esc(t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/`(.+?)`/g, "<code>$1</code>").replace(/(https?:\/\/[^\s)<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+  let out = "", list = false;
+  for (const line of src.split("\n")) {
+    const li = line.match(/^\s*[-*]\s+(.*)/), hd = line.match(/^(#{1,3})\s+(.*)/);
+    if (li) { if (!list) { out += "<ul>"; list = true; } out += "<li>" + inline(li[1]) + "</li>"; continue; }
+    if (list) { out += "</ul>"; list = false; }
+    if (hd) out += `<h${hd[1].length}>${inline(hd[2])}</h${hd[1].length}>`; else if (line.trim()) out += "<p>" + inline(line) + "</p>";
+  }
+  return out + (list ? "</ul>" : "");
+}
+
+/* ================================================================ actions */
+function renderAll() { renderFlow(); renderTrace(); renderInspector(); updateButtons(); }
+function updateButtons() {
+  $("#runBtn").hidden = S.running; $("#stopBtn").hidden = !S.running; $("#prompt").disabled = S.running;
+}
+function resetUI() {
+  S = freshState(); S.mode = mode; rowEls.clear(); $("#rows").innerHTML = "";
+}
+async function startRun() {
+  const prompt = $("#prompt").value.trim(); if (!prompt || S.running) return;
+  resetUI(); S.prompt = prompt; S.running = true; S.startWall = Date.now(); S.runId = "pending"; tab = "result";
+  renderAll();
+  try {
+    const r = await fetch("/api/runs", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ prompt, mode }) });
+    if (!r.ok) throw new Error((await r.json()).detail || r.statusText);
+    S.runId = (await r.json()).id;
+    stream(S.runId);
+  } catch (e) {
+    S.running = false; S.status = "failed"; S.error = { message: "Could not start: " + e.message }; renderAll();
+  }
+}
+function stream(id) {
+  if (es) es.close();
+  es = new EventSource(`/api/runs/${id}/stream`);
+  es.onmessage = m => {
+    const ev = JSON.parse(m.data); apply(ev);
+    if (!S.selected && S.follow !== false) {/* keep Step tab empty until user picks */}
+    renderAll();
+    if (ev.type === "run.end") { es.close(); es = null; tab = "result"; renderAll(); loadHistory(); }
+  };
+  es.onerror = () => { /* EventSource retries; duplicates are ignored via event index */ };
+}
+async function loadRun(id) {
+  const r = await fetch("/api/runs/" + id); if (!r.ok) return;
+  const d = await r.json();
+  resetUI(); S.runId = d.id; S.prompt = d.prompt; S.mode = d.mode; mode = d.mode; S.replay = true; S.startWall = d.started * 1000;
+  $("#prompt").value = d.prompt; setMode(d.mode);
+  for (const ev of d.events) apply(ev);
+  tab = "result"; renderAll();
+}
+async function loadHistory() {
+  try {
+    const list = await (await fetch("/api/runs")).json();
+    $("#histPop").innerHTML = list.length ? list.map(r => `<button class="item" data-run="${esc(r.id)}"><b>${esc(r.prompt)}</b>
+      <span class="note">${new Date(r.started * 1000).toLocaleString()} \u00b7 ${esc(r.mode)} \u00b7 ${esc(r.status)} \u00b7 ${fmtMs(r.ms)}</span></button>`).join("") : '<div class="empty">No runs yet</div>';
+  } catch { }
+}
+function setMode(m) { mode = m; $$("#modeSeg button").forEach(b => b.classList.toggle("on", b.dataset.mode === m)); }
+
+async function pollStatus() {
+  try {
+    info = await (await fetch("/api/status")).json();
+    const up = info.ollama.up, on = info.agents.filter(a => a.online).length;
+    $("#chipOllama").innerHTML = `<i class="dot ${up ? "on" : "off"}"></i>Ollama ${up ? (info.ollama.loaded.length + " model" + (info.ollama.loaded.length === 1 ? "" : "s") + " in memory") : "offline"}`;
+    $("#chipAgents").innerHTML = `<i class="dot ${on === info.agents.length ? "on" : on ? "mid" : "off"}"></i>Agents ${on}/${info.agents.length}`;
+    $("#warmBtn").textContent = info.ollama.warming ? "Loading models\u2026" : "Warm up models";
+    $("#warmBtn").disabled = !!info.ollama.warming || !up;
+    const sig = info.agents.map(a => a.name + "|" + a.model + "|" + a.servers.map(s => s.name).join(",")).join(";");
+    if (sig !== nodesSig) { nodesSig = sig; buildNodes(); }   // rebuild when the real agent info arrives
+    renderFlow(); if (tab === "agents") renderInspector();
+  } catch { $("#chipOllama").innerHTML = '<i class="dot off"></i>UI server unreachable'; }
+}
+
+/* ================================================================ wiring */
+$("#runBtn").onclick = startRun;
+$("#stopBtn").onclick = () => fetch(`/api/runs/${S.runId}/cancel`, { method: "POST" });
+$("#prompt").addEventListener("keydown", e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); startRun(); } });
+$("#prompt").addEventListener("input", e => { e.target.style.height = "auto"; e.target.style.height = Math.min(140, e.target.scrollHeight) + "px"; });
+$("#examples").innerHTML = EXAMPLES.map(t => `<span class="chip" data-ex="${esc(t)}">${esc(t)}</span>`).join("");
+$("#examples").onclick = e => { const c = e.target.closest("[data-ex]"); if (c && !S.running) { $("#prompt").value = c.dataset.ex; $("#prompt").focus(); } };
+$("#modeSeg").onclick = e => { const b = e.target.closest("button"); if (b && !S.running) setMode(b.dataset.mode); };
+$("#filterSeg").onclick = e => { const b = e.target.closest("button"); if (!b) return; S.filter = b.dataset.f; $$("#filterSeg button").forEach(x => x.classList.toggle("on", x === b)); renderTrace(); };
+$("#tabs").onclick = e => { const b = e.target.closest("button"); if (b) { tab = b.dataset.t; renderInspector(); } };
+$("#rows").onclick = e => { const r = e.target.closest(".row"); if (r) { S.selected = r.dataset.id; tab = "step"; renderTrace(); renderInspector(); } };
+$("#nodes").onclick = e => { const n = e.target.closest(".node.agent"); if (n) { S.picked = S.picked === n.dataset.agent ? null : n.dataset.agent; renderFlow(); renderTrace(); } };
+$("#ibody").onclick = e => { const c = e.target.closest("[data-copy]"); if (c) { navigator.clipboard?.writeText(c.closest(".sec").querySelector("pre").textContent); c.textContent = "Copied"; setTimeout(() => c.textContent = "Copy", 1200); } };
+$("#histBtn").onclick = async e => { e.stopPropagation(); const p = $("#histPop"); if (p.hidden) await loadHistory(); p.hidden = !p.hidden; };
+$("#histPop").onclick = e => { const b = e.target.closest("[data-run]"); if (b && !S.running) { $("#histPop").hidden = true; loadRun(b.dataset.run); } };
+document.addEventListener("click", e => { if (!e.target.closest("#histPop")) $("#histPop").hidden = true; });
+$("#warmBtn").onclick = async () => { await fetch("/api/warmup", { method: "POST" }); pollStatus(); };
+$("#themeBtn").onclick = () => {
+  const cur = document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  const next = cur === "dark" ? "light" : "dark"; document.documentElement.dataset.theme = next; try { localStorage.setItem("theme", next); } catch { }
+};
+try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch { }
+
+setInterval(() => {   // live timers
+  if (S.running) { $("#clock").textContent = fmtClock(Date.now() - S.startWall); renderFlow(); renderTraceTimers(); }
+}, 200);
+function renderTraceTimers() {
+  for (const sp of S.spans) if (sp.status === "running") { const el = rowEls.get(sp.id); if (el) el.querySelector(".rdur").textContent = fmtMs(Date.now() - sp.wall); }
+  layoutBars();
+  if (tab === "result") { const t = $("#ibody .pill.running"); if (t) { /* keep the result panel fresh without flicker */ } }
+}
+setInterval(() => { if (S.running && tab === "result") renderInspector(); }, 1500);
+setInterval(() => { if (!S.running || S.replay) $("#clock").textContent = fmtClock(S.ms || 0); }, 500);
+setInterval(pollStatus, 4000);
+
+buildNodes(); renderAll(); pollStatus(); loadHistory();
+</script>
+</body>
+</html>
