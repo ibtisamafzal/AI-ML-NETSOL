@@ -1,0 +1,14 @@
+Introduction:
+
+Neural Network:
+Input Layer
+Hidden Layer
+Output Layer
+
+Types of Neural Networks:
+FeedForward Neural Networks (FNNs): No Backpropagation
+Convolutional Neural Networks (CNNs): Image Data
+Recurrent Neural Networks (RNNs): LSTM and GRUs (Natural Language)
+Generative Adversarial Networks (GANs)
+Autoencoders
+Transformer Networks

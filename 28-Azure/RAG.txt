@@ -1,0 +1,8 @@
+RAG (Retrieval Augmented Generation):
+
+It combines:
+- Information Retrieval (Search)
+- A Large Language Model (LLM)
+- Context provided from an external knowledge source
+
+Purpose: allow an existing AI model to answer questions using our own documents, databases and frequently changing information.
