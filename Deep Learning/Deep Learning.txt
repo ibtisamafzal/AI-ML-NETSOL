@@ -6,9 +6,24 @@ Hidden Layer
 Output Layer
 
 Types of Neural Networks:
-FeedForward Neural Networks (FNNs): No Backpropagation
-Convolutional Neural Networks (CNNs): Image Data
-Recurrent Neural Networks (RNNs): LSTM and GRUs (Natural Language)
-Generative Adversarial Networks (GANs)
-Autoencoders
-Transformer Networks
+
+1. FeedForward Neural Networks (FNNs):
+- No Backpropagation -> It repeats the process from start instead of moving a step back.
+- Data flow in one direction -> Classification Tasks
+
+
+2. Convolutional Neural Networks (CNNs): Image Data:
+- Grid-like data -> Images
+- Edge detection
+
+
+3. Recurrent Neural Networks (RNNs):
+- Input (X), Output (Y), Weights, Hidden State (S) -> Stores previous input
+- LSTM and GRUs (Natural Language)
+
+
+
+4. Generative Adversarial Networks (GANs)
+
+5. Autoencoders
+6. Transformer Networks
