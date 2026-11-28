@@ -6,32 +6,43 @@ Hidden Layer -> Neuron (Weighted Sum + Activation Functions)
 Output Layer
 
 
-
 Types of Neural Networks:
 
 1. FeedForward Neural Networks (FNNs):
+- Classification
 - No Backpropagation -> It repeats the process from start instead of moving a step back.
 - Data flow in one direction -> Classification Tasks
 
 
-2. Convolutional Neural Networks (CNNs): Image Data:
+2. Convolutional Neural Networks (CNNs): Image Data
 - Grid-like data -> Images
-- Edge detection
+- Feature Extraction -> Edge detection using filters, Pooling
 - Pooling Layer -> Reduces the size of the image for faster processing (Prevent overfitting)
 
 
 3. Recurrent Neural Networks (RNNs):
+- Sequential Data (Time-series and natural language)
 - Input (X), Output (Y), Weights, Hidden State (S) -> Stores previous input
+- Use case: Language Modeling, Speech Recognition.
 - LSTM and GRUs (Natural Language)
 - Vanishing Gradient Problem (Data Lost in Backpropagation) -> Solution (LSTM)
 
+
 4. Generative Adversarial Networks (GANs)
-- Generates new realistic data
-- Two Components: [Generator (Job: Fool the discriminator) + Discriminator (Job: Detect the flaws of generator)]
+- Generates new realistic data (image generation, style transfer, data augmentation)
+- Two Networks: Generator (Job: Fool the discriminator) + Discriminator (Job: Detect if the image is real or fake)
 
 
+5. Autoencoders (Data Compression)
+- Compress input data into a smaller representation and then reconstruct it.
+- Unsupervised Networks to learn data encodings.
+- Use cases: Anomaly Detection + Dimensionality Reduction.
+- Components:
+	- Encoder (Compress input into smaller form while preserving important information)
+	- Bottle Neck (Latent Space)
+	- Decoder (Taking compressed form from the latent and reconstruct it)
 
-5. Autoencoders
+
 6. Transformer Networks
 
 
